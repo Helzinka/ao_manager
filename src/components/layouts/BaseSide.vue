@@ -1,58 +1,31 @@
 <template>
   <el-menu
-    default-active="2"
-    class="el-menu-vertical-demo"
-    :collapse="isCollapse"
-    @open="handleOpen"
-    @close="handleClose"
+    :collapse="isCollapsed"
+    :collapse-transition="full"
+    default-active="1"
+    class="h-full"
+    router
   >
-    <el-sub-menu index="1">
-      <template #title>
-        <el-icon><location /></el-icon>
-        <span>Navigator One</span>
-      </template>
-      <el-menu-item-group>
-        <template #title><span>Group One</span></template>
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item two</el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="Group Two">
-        <el-menu-item index="1-3">item three</el-menu-item>
-      </el-menu-item-group>
-      <el-sub-menu index="1-4">
-        <template #title><span>item four</span></template>
-        <el-menu-item index="1-4-1">item one</el-menu-item>
-      </el-sub-menu>
-    </el-sub-menu>
-    <el-menu-item index="2">
-      <el-icon><icon-menu /></el-icon>
-      <template #title>Navigator Two</template>
+    <el-menu-item index="1" :route="{ name: 'price' }">
+      <el-icon><Money /></el-icon>
+      <template #title>Price</template>
     </el-menu-item>
-    <el-menu-item index="3" disabled>
-      <el-icon><document /></el-icon>
-      <template #title>Navigator Three</template>
+    <el-menu-item index="2" :route="{ name: 'price' }">
+      <el-icon><Calendar /></el-icon>
+      <template #title>Evènements</template>
     </el-menu-item>
-    <el-menu-item index="4">
-      <el-icon><setting /></el-icon>
-      <template #title>Navigator Four</template>
+    <el-menu-item index="3" :route="{ name: 'parameter' }">
+      <el-icon><Setting /></el-icon>
+      <template #title>Paramètres</template>
     </el-menu-item>
   </el-menu>
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-import {
-  Location,
-  Document,
-  Menu as IconMenu,
-  Setting,
-} from "@element-plus/icons-vue";
+import { ref, type Ref } from 'vue';
 
-const isCollapse = ref(true);
-const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath);
-};
-const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath);
-};
+import { Calendar, Setting, Money } from '@element-plus/icons-vue';
+
+const isCollapsed: Ref<boolean> = ref(false);
+const full: Ref<boolean> = ref(false);
 </script>

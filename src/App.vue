@@ -1,23 +1,36 @@
 <template>
   <el-config-provider namespace="ep">
-    <BaseHeader />
-    <div class="flex main-container">
-      <BaseSide />
-      <div w="full" py="4">
-        <Logos my="4" />
-        <HelloWorld msg="Hello Vue 3 + Element Plus + Vite" />
-      </div>
+    <el-header class="fixed top-0 z-12 w-screen px-0">
+      <BaseHeader />
+    </el-header>
+    <div class="content flex w-screen">
+      <el-aside width="auto" class="sticky">
+        <BaseSide />
+      </el-aside>
+      <el-main>
+        <el-scrollbar>
+          <router-view v-slot="{ Component, route }">
+            <transition name="el-fade-in-linear">
+              <component :is="Component" :key="route.path" />
+            </transition>
+          </router-view>
+        </el-scrollbar>
+      </el-main>
     </div>
   </el-config-provider>
 </template>
 
-<style>
-#app {
-  text-align: center;
-  color: var(--ep-text-color-primary);
+<style scoped>
+.ep-header {
+  --ep-header-padding: 0;
+  background-image: radial-gradient(transparent 1px, var(--ep-bg-color) 1px);
+  background-size: 4px 4px;
+  backdrop-filter: saturate(50%) blur(4px);
 }
 
-.main-container {
-  height: calc(100vh - var(--ep-menu-item-height) - 3px);
+.content {
+  --ep-header-height: 60px;
+  margin-top: var(--ep-header-height);
+  height: calc(100vh - var(--ep-header-height));
 }
 </style>
