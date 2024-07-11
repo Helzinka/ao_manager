@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import EventView from '@/views/EventView.vue';
-import HomeView from '@/views/HomeView.vue';
+import DashboardView from '@/views/DashboardView.vue';
 import NotFound from '@/views/NotFoundView.vue';
 import ParameterView from '@/views/ParameterView.vue';
 import PriceView from '@/views/PriceView.vue';
@@ -11,31 +10,13 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView,
+      name: 'dashboard',
+      component: DashboardView,
     },
     {
-      path: '/Price',
+      path: '/price',
       name: 'price',
-      component: PriceView,
-    },
-    {
-      path: '/events',
-      name: 'events',
-      component: EventView,
-    },
-    {
-      path: '/parameter',
-      name: 'parameter',
-      component: ParameterView,
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: async () => await import('@/views/AboutView.vue'),
+      component: async () => await import('@/views/PriceView.vue'),
     },
     { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
   ],

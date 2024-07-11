@@ -34,9 +34,9 @@
     >
       <el-option
         v-for="item in itemsList"
-        :key="item['@uniquename']"
-        :label="item['@uniquename']"
-        :value="item['@uniquename']"
+        :key="item.value"
+        :label="item.label"
+        :value="item.value"
       />
     </el-select>
     <el-button type="primary" plain>Rechercher</el-button>
@@ -44,13 +44,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { shopcategories } from '../../data/shopcategories.json';
-import items from '../../data/items.json';
+import { ref, computed, onMounted } from 'vue';
+import { shopcategories } from '@/data/shopcategories.json';
+import items from '@/data/items.json';
+import { getCurrentGold } from '@/service/price.service';
 
 const cat = ref('');
 const sub = ref('');
 const item = ref('');
+
+onMounted(() => {});
 
 const categories = shopcategories.map((category: any) => ({
   value: category.id,
@@ -59,7 +62,6 @@ const categories = shopcategories.map((category: any) => ({
 
 const subCategory = computed(() => {
   sub.value = '';
-  console.log(cat.value);
   const category = shopcategories.find(
     (category: any) => category.id === cat.value
   );
@@ -70,13 +72,21 @@ const subCategory = computed(() => {
       }))
     : [];
 });
-console.log(items.items);
+
 const itemsList = computed(() => {
-  return items.items.equipmentitem.filter((category: any) => {
-    console.log(category['@shopsubcategory1'], cat.value);
-    category['@shopsubcategory1'] === cat.value;
-  });
+  item.value = '';
+  const data = items.items.equipmentitem.filter(
+    (category: any) =>
+      category['@shopsubcategory1'] === sub.value && category['@tier'] === '4'
+  );
+  return data.length
+    ? data.map((item: any) => ({
+        value: item['@uniquename'],
+        label: item['@uniquename'],
+      }))
+    : [];
 });
+// console.log(itemsList());
 </script>
 
 <style></style>
