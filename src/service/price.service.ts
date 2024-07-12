@@ -1,9 +1,9 @@
-import { instanceAxios } from '@/service/index';
+import { instanceAxios } from '.';
 
-export async function getCurrentGold(count: number = 2) {
-  instanceAxios.defaults.baseURL = 'https://europe.albion-online-data.com';
-  const data = await instanceAxios.get(
-    `/api/v2/stats/gold.json?count=${count}`
-  );
-  console.log(data);
+export async function getCurrentItemPrice(item: string) {
+  try {
+    return await instanceAxios.get(`/api/v2/stats/prices/${item}.json`);
+  } catch (error) {
+    console.log(error);
+  }
 }
