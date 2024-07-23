@@ -1,9 +1,15 @@
 import { instanceAxios } from '.';
 
-export async function getCurrentItemPrice(item: string) {
+export async function getItemPrice(item: string) {
   try {
-    return await instanceAxios.get(`/api/v2/stats/prices/${item}.json`);
+    const { data } = await instanceAxios.get(
+      `/api/v2/stats/prices/${item}.json`
+    );
+    if (data.length) {
+      return data;
+    }
+    throw new Error('No data found');
   } catch (error) {
-    console.log(error);
+    return [];
   }
 }

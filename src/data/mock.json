@@ -9,7 +9,61 @@
       "timestamp": "2024-07-11T13:00:00"
     }
   ],
-  "items": [
+  "item": [
+    {
+      "item_id": "T5_HEAD_CLOTH_SET1",
+      "city": "Bridgewatch",
+      "quality": 1,
+      "sell_price_min": 1233,
+      "sell_price_min_date": "2024-07-12T07:05:00",
+      "sell_price_max": 5979,
+      "sell_price_max_date": "2024-07-12T07:05:00",
+      "buy_price_min": 1,
+      "buy_price_min_date": "2024-07-12T07:00:00",
+      "buy_price_max": 5158,
+      "buy_price_max_date": "2024-07-12T07:00:00"
+    },
+    {
+      "item_id": "T5_HEAD_CLOTH_SET1",
+      "city": "Bridgewatch",
+      "quality": 2,
+      "sell_price_min": 2345,
+      "sell_price_min_date": "2024-07-12T07:05:00",
+      "sell_price_max": 5979,
+      "sell_price_max_date": "2024-07-12T07:05:00",
+      "buy_price_min": 5810,
+      "buy_price_min_date": "2024-07-11T23:30:00",
+      "buy_price_max": 5810,
+      "buy_price_max_date": "2024-07-11T23:30:00"
+    },
+    {
+      "item_id": "T5_HEAD_CLOTH_SET1",
+      "city": "Lymhurst",
+      "quality": 1,
+      "sell_price_min": 5949,
+      "sell_price_min_date": "0001-01-01T00:00:00",
+      "sell_price_max": 0,
+      "sell_price_max_date": "0001-01-01T00:00:00",
+      "buy_price_min": 0,
+      "buy_price_min_date": "0001-01-01T00:00:00",
+      "buy_price_max": 0,
+      "buy_price_max_date": "0001-01-01T00:00:00"
+    },
+    {
+      "item_id": "T5_HEAD_CLOTH_SET1",
+      "city": "Lymhurst",
+      "quality": 2,
+      "sell_price_min": 5949,
+      "sell_price_min_date": "0001-01-01T00:00:00",
+      "sell_price_max": 0,
+      "sell_price_max_date": "0001-01-01T00:00:00",
+      "buy_price_min": 0,
+      "buy_price_min_date": "0001-01-01T00:00:00",
+      "buy_price_max": 0,
+      "buy_price_max_date": "0001-01-01T00:00:00"
+    }
+  ],
+  "multipleItems": [
     {
       "item_id": "T5_HEAD_CLOTH_SET1",
       "city": "Bridgewatch",

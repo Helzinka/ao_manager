@@ -1,7 +1,7 @@
 <template>
   <div class="flex gap-4 items-end">
     <el-select
-      v-model="catSelected"
+      v-model="itemStore.category"
       placeholder="Category"
       size="large"
       filterable
@@ -18,7 +18,7 @@
       />
     </el-select>
     <el-select
-      v-model="subSelected"
+      v-model="itemStore.sub_category"
       filterable
       placeholder="Sub category"
       size="large"
@@ -35,7 +35,7 @@
       />
     </el-select>
     <el-select
-      v-model="tierSelected"
+      v-model="itemStore.tier"
       placeholder="Tier"
       size="large"
       style="width: 100px"
@@ -51,7 +51,7 @@
       />
     </el-select>
     <el-select
-      v-model="itemSelected"
+      v-model="itemStore.item"
       placeholder="Item"
       filterable
       size="large"
@@ -67,21 +67,26 @@
         :value="item.value"
       />
     </el-select>
-    <!-- <el-button type="primary" plain @click="search" :icon="Search">
+    <el-button
+      type="primary"
+      plain
+      @click="itemStore.getItemPrice()"
+      :icon="Search"
+    >
       Rechercher
-    </el-button> -->
+    </el-button>
   </div>
 </template>
 
 <script setup lang="ts">
 import { shopcategories } from '@/data/shopcategories.json';
 import dataSource from '@/data/items.json';
+import { Search } from '@element-plus/icons-vue';
+import { useItemStore } from '@/store/item.store';
 import { ref, computed } from 'vue';
 
-const catSelected = ref('');
-const subSelected = ref('');
-const itemSelected = ref('');
-const tierSelected = ref('');
+const itemStore = useItemStore();
+
 const tierList = ref([
   { value: '1', label: '1' },
   { value: '2', label: '2' },
@@ -99,9 +104,9 @@ const categories = shopcategories.map((category: any) => ({
 }));
 
 const subCategory = computed(() => {
-  subSelected.value = '';
+  itemStore.sub_category = '';
   const category = shopcategories.find(
-    (category: any) => category.id === catSelected.value
+    (category: any) => category.id === itemStore.category
   );
   return category
     ? category.shopsubcategory.map((sub: any) => ({
@@ -112,11 +117,12 @@ const subCategory = computed(() => {
 });
 
 const itemsList = computed(() => {
-  itemSelected.value = '';
+  itemStore.item = '';
+
   const data = dataSource.items.equipmentitem.filter(
     (item: any) =>
-      item['@shopsubcategory1'] === subSelected.value &&
-      item['@tier'] === tierSelected.value
+      item['@shopsubcategory1'] === itemStore.sub_category &&
+      item['@tier'] === itemStore.tier
   );
   return data.length
     ? data.map((item: any) => ({
