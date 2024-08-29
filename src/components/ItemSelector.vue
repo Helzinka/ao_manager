@@ -88,6 +88,7 @@ import { ref, computed } from 'vue';
 const itemStore = useItemStore();
 
 const tierList = ref([
+  { value: '0', label: 'all' },
   { value: '1', label: '1' },
   { value: '2', label: '2' },
   { value: '3', label: '3' },
@@ -117,13 +118,53 @@ const subCategory = computed(() => {
 });
 
 const itemsList = computed(() => {
+  if (!itemStore.sub_category) return;
+
+  let categoryItem = '';
   itemStore.item = '';
 
-  const data = dataSource.items.equipmentitem.filter(
-    (item: any) =>
-      item['@shopsubcategory1'] === itemStore.sub_category &&
-      item['@tier'] === itemStore.tier
+  if (
+    itemStore.category === 'melee' ||
+    itemStore.category === 'magic' ||
+    itemStore.category === 'ranged' ||
+    itemStore.category === 'offhand' ||
+    itemStore.category === 'tools'
+  ) {
+    categoryItem = 'weapon';
+  }
+  if (itemStore.category === 'consumables') {
+    categoryItem = 'consumableItem';
+  }
+
+  if (itemStore.category === 'mounts') {
+    categoryItem = 'mount';
+  }
+
+  if (itemStore.category === 'skillbooks') {
+    categoryItem = 'consumablefrominventoryitem';
+  }
+
+  if (
+    itemStore.category === 'ressources' ||
+    itemStore.category === 'cityresources' ||
+    itemStore.category === 'artefacts' ||
+    itemStore.category === 'essence'
+  ) {
+    categoryItem = 'simpleitem';
+  }
+
+  if (itemStore.category === 'armor' || itemStore.category === 'accessories') {
+    categoryItem = 'equipmentitem';
+  }
+
+  if (!categoryItem) return;
+
+  let data = dataSource.items[categoryItem].filter(
+    (item: any) => item['@shopsubcategory1'] === itemStore.sub_category
   );
+  if (itemStore.tier !== '0')
+    data = data.filter((item: any) => item['@tier'] === itemStore.tier);
+
   return data.length
     ? data.map((item: any) => ({
         value: item['@uniquename'],

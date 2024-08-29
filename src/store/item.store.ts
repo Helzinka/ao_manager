@@ -13,9 +13,17 @@ export const useItemStore = defineStore('itemStore', {
   actions: {
     async getItemPrice() {
       if (this.item) {
-        console.log(this.item);
-        this.data = await getItemPrice(this.item);
+        const itemsName = this.getAllTierItems();
+        this.data = await getItemPrice(itemsName);
       }
+    },
+    getAllTierItems() {
+      let itemsName = [];
+      for (let i = 0; i <= 4; i++) {
+        if (i == 0) itemsName.push(this.item);
+        else itemsName.push(`${this.item}@${i}`);
+      }
+      return itemsName;
     },
   },
 });
