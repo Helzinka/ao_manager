@@ -8,13 +8,11 @@
         <BaseSide />
       </el-aside>
       <el-main>
-        <el-scrollbar>
-          <router-view v-slot="{ Component, route }">
-            <transition name="el-fade-in-linear">
-              <component :is="Component" :key="route.path" />
-            </transition>
-          </router-view>
-        </el-scrollbar>
+        <router-view v-slot="{ Component, route }">
+          <transition name="el-fade-in-linear">
+            <component :is="Component" :key="route.path" />
+          </transition>
+        </router-view>
       </el-main>
     </div>
   </el-config-provider>

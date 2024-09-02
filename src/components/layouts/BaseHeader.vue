@@ -1,10 +1,11 @@
 <template>
   <el-menu mode="horizontal" router class="justify-between items-center">
     <el-menu-item index="1" :route="{ name: 'dashboard' }">
-      Element Plus
+      AO MANAGER
     </el-menu-item>
-    <div class="flex items-center">
+    <div class="flex gap-2 items-center">
       <RegionSelector />
+      <LangSelector />
       <el-menu-item h="full" @click="toggleDark()">
         <button
           class="w-full cursor-pointer border-none bg-transparent"

@@ -51,7 +51,7 @@
       />
     </el-select>
     <el-select
-      v-model="itemStore.item"
+      v-model="itemStore.itemSelected"
       placeholder="Item"
       filterable
       size="large"
