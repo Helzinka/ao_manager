@@ -3,7 +3,6 @@ import { createRouter, createWebHistory } from 'vue-router';
 import DashboardView from '@/views/DashboardView.vue';
 import NotFound from '@/views/NotFoundView.vue';
 import CrafView from '@/views/CraftView.vue';
-import RessourceView from '@/views/RessourceView.vue';
 import ParameterView from '@/views/ParameterView.vue';
 
 const router = createRouter({
@@ -27,7 +26,8 @@ const router = createRouter({
     {
       path: '/ressource',
       name: 'ressource',
-      component: async () => await import('@/views/RessourceView.vue'),
+      component: async () =>
+        await import('@/views/ressourceView/RessourceView.vue'),
     },
     {
       path: '/parameter',

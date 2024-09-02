@@ -4,6 +4,7 @@
   <el-scrollbar>
     <el-row gutter="20">
       <el-col v-for="item in itemStore.data" span="12">
+        <el-image :src="getImageUrl(item.item)" fit="fit" />
         name : {{ item.name }} tier : {{ item.tier || 0 }}
         <el-table :data="item.data" border class="my-4" table-layout="auto">
           <el-table-column sortable prop="city" label="city" />
@@ -23,6 +24,7 @@ import { ref, computed, onMounted } from 'vue';
 import { Search } from '@element-plus/icons-vue';
 import mock from '@/data/mock.json';
 import { useItemStore } from '@/store/item.store';
+import { getImageUrl } from '@/plugins/format';
 
 const itemStore = useItemStore();
 

@@ -18,22 +18,22 @@
       </template>
       <el-menu-item-group>
         <el-menu-item index="2" :route="{ name: 'price' }">
-          <template #title>Item</template>
+          <template #title>Items</template>
         </el-menu-item>
         <el-menu-item index="2-1" :route="{ name: 'ressource' }">
-          <template #title>Ressource</template>
+          <template #title>Ressources</template>
         </el-menu-item>
       </el-menu-item-group>
     </el-sub-menu>
 
-    <el-menu-item index="2" :route="{ name: 'craft' }">
+    <el-menu-item index="3" :route="{ name: 'craft' }">
       <el-icon><Calendar /></el-icon>
       <template #title>Craft</template>
     </el-menu-item>
 
     <el-menu-item index="4" :route="{ name: 'parameter' }">
       <el-icon><Setting /></el-icon>
-      <template #title>Paramètres</template>
+      <template #title>Parameter</template>
     </el-menu-item>
   </el-menu>
 </template>
