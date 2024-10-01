@@ -15,7 +15,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
     plugins: [
       vue(),
       checker({
-        typescript: true,
+        typescript: false,
       }),
       Components({
         extensions: ['vue', 'md'],
@@ -41,6 +41,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
     css: {
       preprocessorOptions: {
         scss: {
+          api: 'modern',
           additionalData: '@use "@/styles/element/index.scss" as *;',
         },
       },

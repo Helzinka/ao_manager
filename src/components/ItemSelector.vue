@@ -67,14 +67,16 @@
         :value="item.value"
       />
     </el-select>
-    <el-button
-      type="primary"
-      plain
-      @click="itemStore.getItemPrice()"
-      :icon="Search"
-    >
+    <el-button type="primary" plain @click="search" :icon="Search">
       Rechercher
     </el-button>
+    <div v-if="multiple">
+      <el-switch
+        v-model="itemStore.multiple"
+        class="mb-2"
+        active-text="Multiple"
+      />
+    </div>
   </div>
 </template>
 
@@ -84,6 +86,11 @@ import dataSource from '@/data/items.json';
 import { Search } from '@element-plus/icons-vue';
 import { useItemStore } from '@/store/item.store';
 import { ref, computed } from 'vue';
+
+defineProps({
+  multiple: Boolean,
+  search: Function,
+});
 
 const itemStore = useItemStore();
 
@@ -121,7 +128,6 @@ const itemsList = computed(() => {
   if (!itemStore.sub_category) return;
 
   let categoryItem = '';
-  itemStore.item = '';
 
   if (
     itemStore.category === 'melee' ||

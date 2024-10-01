@@ -1,5 +1,9 @@
 <template>
-  <div><h1>craft</h1></div>
+  <ItemSelector multiple :search="ok"></ItemSelector>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+function ok() {
+  console.log('ok');
+}
+</script>

@@ -2,9 +2,9 @@
   <ItemSelector />
   <br />
   <el-scrollbar>
-    <el-row gutter="20">
-      <el-col v-for="item in itemStore.data" span="12">
-        <el-image :src="getImageUrl(item.item)" fit="fit" />
+    <el-row :gutter="20">
+      <el-col v-for="item in itemStore.data" :span="12">
+        <el-image :src="getImageUrl(item.item)" fit="cover" />
         name : {{ item.name }} tier : {{ item.tier || 0 }}
         <el-table :data="item.data" border class="my-4" table-layout="auto">
           <el-table-column sortable prop="city" label="city" />

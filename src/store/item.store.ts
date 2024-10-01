@@ -8,7 +8,8 @@ export const useItemStore = defineStore('itemStore', {
     category: '',
     sub_category: '',
     tier: '',
-    itemSelected: 'ok',
+    itemSelected: '',
+    multiple: false,
     data: [] as any,
   }),
   getters: {},
@@ -40,7 +41,8 @@ export const useItemStore = defineStore('itemStore', {
         if (!acc[item_id]) {
           acc[item_id] = {};
           acc[item_id].item = item_id;
-          acc[item_id].name = getTranslate(item_id);
+          // acc[item_id].name = getTranslate(item_id);
+          acc[item_id].name = item_id;
           acc[item_id].tier = cell.item_id.split('@')[1] || 0;
           acc[item_id].data = [];
         }
