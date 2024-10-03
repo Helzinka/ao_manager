@@ -28,7 +28,7 @@
         <span>Sub category</span>
       </template>
       <el-option
-        v-for="item in subCategory"
+        v-for="item in sub_category"
         :key="item.value"
         :label="item.label"
         :value="item.value"
@@ -61,7 +61,7 @@
         <span>Item</span>
       </template>
       <el-option
-        v-for="item in itemsList"
+        v-for="item in items"
         :key="item.value"
         :label="item.label"
         :value="item.value"
@@ -70,26 +70,22 @@
     <el-button type="primary" plain @click="search" :icon="Search">
       Rechercher
     </el-button>
-    <div v-if="multiple">
-      <el-switch
-        v-model="itemStore.multiple"
-        class="mb-2"
-        active-text="Multiple"
-      />
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { shopcategories } from '@/data/shopcategories.json';
-import dataSource from '@/data/items.json';
 import { Search } from '@element-plus/icons-vue';
 import { useItemStore } from '@/store/item.store';
 import { ref, computed } from 'vue';
 
 defineProps({
-  multiple: Boolean,
-  search: Function,
+  multiple: {
+    type: Boolean,
+    default: false,
+  },
+  search: {
+    type: Promise,
+  },
 });
 
 const itemStore = useItemStore();
@@ -106,77 +102,23 @@ const tierList = ref([
   { value: '8', label: '8' },
 ]);
 
-const categories = shopcategories.map((category: any) => ({
-  value: category.id,
-  label: category.id,
+const categories = itemStore.getCategories.map((category: any) => ({
+  value: category,
+  label: category,
 }));
 
-const subCategory = computed(() => {
-  itemStore.sub_category = '';
-  const category = shopcategories.find(
-    (category: any) => category.id === itemStore.category
-  );
-  return category
-    ? category.shopsubcategory.map((sub: any) => ({
-        value: sub.id,
-        label: sub.id,
-      }))
-    : [];
+const sub_category = computed(() => {
+  return itemStore.getSubCategory?.map((subCategory: any) => ({
+    value: subCategory.id,
+    label: subCategory.id,
+  }));
 });
 
-const itemsList = computed(() => {
-  if (!itemStore.sub_category) return;
-
-  let categoryItem = '';
-
-  if (
-    itemStore.category === 'melee' ||
-    itemStore.category === 'magic' ||
-    itemStore.category === 'ranged' ||
-    itemStore.category === 'offhand' ||
-    itemStore.category === 'tools'
-  ) {
-    categoryItem = 'weapon';
-  }
-  if (itemStore.category === 'consumables') {
-    categoryItem = 'consumableItem';
-  }
-
-  if (itemStore.category === 'mounts') {
-    categoryItem = 'mount';
-  }
-
-  if (itemStore.category === 'skillbooks') {
-    categoryItem = 'consumablefrominventoryitem';
-  }
-
-  if (
-    itemStore.category === 'ressources' ||
-    itemStore.category === 'cityresources' ||
-    itemStore.category === 'artefacts' ||
-    itemStore.category === 'essence'
-  ) {
-    categoryItem = 'simpleitem';
-  }
-
-  if (itemStore.category === 'armor' || itemStore.category === 'accessories') {
-    categoryItem = 'equipmentitem';
-  }
-
-  if (!categoryItem) return;
-
-  let data = dataSource.items[categoryItem].filter(
-    (item: any) => item['@shopsubcategory1'] === itemStore.sub_category
-  );
-  if (itemStore.tier !== '0')
-    data = data.filter((item: any) => item['@tier'] === itemStore.tier);
-
-  return data.length
-    ? data.map((item: any) => ({
-        value: item['@uniquename'],
-        label: item['@uniquename'],
-      }))
-    : [];
+const items = computed(() => {
+  return itemStore.getItems.map((item: any) => ({
+    value: item['@uniquename'],
+    label: item['@uniquename'],
+  }));
 });
 </script>
 

@@ -1,9 +1,9 @@
 <template>
-  <ItemSelector />
+  <ItemSelector :search="fetchItemPrice" />
   <br />
   <el-scrollbar>
     <el-row :gutter="20">
-      <el-col v-for="item in itemStore.data" :span="12">
+      <el-col v-for="item in price.data" :span="12">
         <el-image :src="getImageUrl(item.item)" fit="cover" />
         name : {{ item.name }} tier : {{ item.tier || 0 }}
         <el-table :data="item.data" border class="my-4" table-layout="auto">
@@ -20,17 +20,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
-import { Search } from '@element-plus/icons-vue';
-import mock from '@/data/mock.json';
-import { useItemStore } from '@/store/item.store';
+import { usePriceStore } from '@/store/price.store';
 import { getImageUrl } from '@/plugins/format';
+import { useItemStore } from '@/store/item.store';
 
-const itemStore = useItemStore();
+const price = usePriceStore();
+const item = useItemStore();
 
-onMounted(() => {
-  itemStore.getItemPrice();
-});
+function fetchItemPrice() {
+  return price.fetchItemPrice(item.itemSelected);
+}
 </script>
 
 <style></style>

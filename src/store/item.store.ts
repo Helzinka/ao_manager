@@ -1,29 +1,77 @@
 import { formatNumberWithEscape, getTranslate } from '@/plugins/format';
-import { getItemPrice } from '@/service/price.service';
 import { defineStore } from 'pinia';
 import fake_data from '@/data/mock.json';
+import { shopcategories } from '@/data/shopcategories.json';
+import source from '@/data/items.json';
 
-export const useItemStore = defineStore('itemStore', {
-  state: () => ({
-    category: '',
-    sub_category: '',
-    tier: '',
-    itemSelected: '',
-    multiple: false,
-    data: [] as any,
-  }),
-  getters: {},
-  actions: {
-    async getItemPrice() {
-      if (this.itemSelected) {
-        // const itemsName = this.getAllTierItems();
-        // const result = await getItemPrice(itemsName);
-        const result = fake_data.multipleItems;
-        if (result.length) {
-          this.data = this.formatPriceByQuality(result);
-        }
-      }
+interface ItemStoreState {
+  category: string;
+  sub_category: string;
+  tier: string;
+  itemSelected: string;
+  rangeItems: string[];
+  data: any;
+}
+
+const state: ItemStoreState = {
+  category: '',
+  sub_category: '',
+  tier: '',
+  rangeItems: [],
+  itemSelected: '',
+  data: [],
+};
+
+export const useItemStore = defineStore('item', {
+  state: () => state,
+  getters: {
+    getCategories(state) {
+      return shopcategories.map((category: any) => category.id).sort();
     },
+    getSubCategory(state) {
+      if (!state.category) return [];
+      return shopcategories.find(
+        (category: any) => state.category === category.id
+      )?.shopsubcategory;
+    },
+    getItems(state) {
+      if (!state.sub_category) return [];
+      let categoryItem = '';
+      const weaponCategories = ['melee', 'magic', 'ranged', 'offhand', 'tools'];
+      const resourceCategories = [
+        'ressources',
+        'cityresources',
+        'artefacts',
+        'essence',
+      ];
+      const equipmentCategories = ['armor', 'accessories'];
+
+      if (weaponCategories.includes(state.category)) {
+        categoryItem = 'weapon';
+      } else if (state.category === 'consumables') {
+        categoryItem = 'consumableitem';
+      } else if (state.category === 'mounts') {
+        categoryItem = 'mount';
+      } else if (state.category === 'skillbooks') {
+        categoryItem = 'consumablefrominventoryitem';
+      } else if (resourceCategories.includes(state.category)) {
+        categoryItem = 'simpleitem';
+      } else if (equipmentCategories.includes(state.category)) {
+        categoryItem = 'equipmentitem';
+      }
+
+      return source.items[categoryItem].filter((item: any) => {
+        if (state.tier !== '0') {
+          return (
+            item['@shopsubcategory1'] === state.sub_category &&
+            item['@tier'] === state.tier
+          );
+        }
+        return item['@shopsubcategory1'] === state.sub_category;
+      });
+    },
+  },
+  actions: {
     getAllTierItems() {
       let itemsName = [];
       for (let i = 0; i <= 4; i++) {

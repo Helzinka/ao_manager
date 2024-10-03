@@ -1,11 +1,13 @@
 import { instanceAxios } from '.';
 
-export async function getItemPrice(item: string | string[]): Promise<any> {
+export async function fetchItemPrice(item: string | string[]): Promise<any> {
   try {
     let url = '';
-    if (item instanceof Array)
+    if (Array.isArray(item)) {
       url = `/api/v2/stats/prices/${item.join(',')}.json`;
-    else url = `/api/v2/stats/prices/${item}.json`;
+    } else {
+      url = `/api/v2/stats/prices/${item}.json`;
+    }
 
     const { data } = await instanceAxios.get(url);
     if (data.length) {
