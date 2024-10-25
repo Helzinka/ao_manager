@@ -1,6 +1,6 @@
 import { instanceAxios } from '.';
 
-export async function fetchItemPrice(item: string | string[]): Promise<any> {
+export async function fetchItemPrice(item: string | string[]) {
   try {
     let url = '';
     if (Array.isArray(item)) {

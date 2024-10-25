@@ -4,21 +4,13 @@ import fake_data from '@/data/mock.json';
 import { shopcategories } from '@/data/shopcategories.json';
 import source from '@/data/items.json';
 
-interface ItemStoreState {
-  category: string;
-  sub_category: string;
-  tier: string;
-  itemSelected: string;
-  rangeItems: string[];
-  data: any;
-}
-
-const state: ItemStoreState = {
+const state = {
   category: '',
   sub_category: '',
   tier: '',
-  rangeItems: [],
-  itemSelected: '',
+  citySelected: 'Lymhurst',
+  rangeItemsSelected: ['T5_HEAD_CLOTH_SET1', 'T6_HEAD_CLOTH_SET1'] as string[],
+  itemSelected: 'T5_HEAD_CLOTH_SET1',
   data: [],
 };
 
@@ -34,8 +26,7 @@ export const useItemStore = defineStore('item', {
         (category: any) => state.category === category.id
       )?.shopsubcategory;
     },
-    getItems(state) {
-      if (!state.sub_category) return [];
+    translateCategoryItem(state) {
       let categoryItem = '';
       const weaponCategories = ['melee', 'magic', 'ranged', 'offhand', 'tools'];
       const resourceCategories = [
@@ -59,16 +50,7 @@ export const useItemStore = defineStore('item', {
       } else if (equipmentCategories.includes(state.category)) {
         categoryItem = 'equipmentitem';
       }
-
-      return source.items[categoryItem].filter((item: any) => {
-        if (state.tier !== '0') {
-          return (
-            item['@shopsubcategory1'] === state.sub_category &&
-            item['@tier'] === state.tier
-          );
-        }
-        return item['@shopsubcategory1'] === state.sub_category;
-      });
+      return categoryItem;
     },
   },
   actions: {
@@ -117,6 +99,14 @@ export const useItemStore = defineStore('item', {
         }
         return acc;
       }, {});
+    },
+    getAllItems() {
+      if (this.itemSelected) {
+        let coreItem = this.itemSelected.replace(/^T\d_/, '');
+        for (let i = 4; i <= 8; i++) {
+          this.rangeItemsSelected.push(`T${i}_${coreItem}`);
+        }
+      }
     },
   },
 });

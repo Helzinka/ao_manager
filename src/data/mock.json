@@ -2664,5 +2664,1834 @@
       "buy_price_max": 0,
       "buy_price_max_date": "0001-01-01T00:00:00"
     }
-  ]
+  ],
+  "craft": {
+    "item": [
+      {
+        "@uniquename": "T5_HEAD_CLOTH_SET1",
+        "@uisprite": "HEAD_CLOTH_LEVEL2",
+        "@facestate": "HOOD",
+        "@beardstate": "HALF",
+        "@slottype": "head",
+        "@shopcategory": "armor",
+        "@shopsubcategory1": "cloth_helmet",
+        "@tier": "5",
+        "@maxqualitylevel": "5",
+        "@itempower": "800",
+        "@weight": "2.5",
+        "@activespellslots": "1",
+        "@passivespellslots": "1",
+        "@hitpointsmax": "0",
+        "@hitpointsregenerationbonus": "0",
+        "@energymax": "0",
+        "@energyregenerationbonus": "0",
+        "@movespeed": "0",
+        "@maxload": "0",
+        "@magiccooldownreduction": "0",
+        "@physicalarmor": "0",
+        "@magicresistance": "0",
+        "@crowdcontrolresistance": "0",
+        "@physicalspelldamagebonus": "0",
+        "@magicspelldamagebonus": "0",
+        "@abilitypower": "100",
+        "@healbonus": "0",
+        "@physicalattackdamagebonus": "0",
+        "@magicattackdamagebonus": "0",
+        "@bonusccdurationvsplayers": "0",
+        "@bonusccdurationvsmobs": "0",
+        "@durability": "10800",
+        "@durabilityloss_attack": "1",
+        "@durabilityloss_spelluse": "1",
+        "@durabilityloss_receivedattack": "1",
+        "@durabilityloss_receivedspell": "1",
+        "@unlockedtocraft": "false",
+        "@unlockedtoequip": "false",
+        "@threatbonus": "0",
+        "@itempowerprogressiontype": "head",
+        "@bonusdefensevsplayers": "0",
+        "@bonusdefensevsmobs": "0",
+        "@magiccasttimereduction": "0",
+        "@attackspeedbonus": "0",
+        "@movespeedbonus": "0",
+        "@uicraftsoundstart": "Play_ui_action_craft_cloth_start",
+        "@uicraftsoundfinish": "Play_ui_action_craft_cloth_finish",
+        "@healmodifier": "0",
+        "@craftingcategory": "cloth_helmet",
+        "@canbeovercharged": "true",
+        "@showinmarketplace": "true",
+        "@energycostreduction": "0",
+        "@masterymodifier": "0.05",
+        "@combatspecachievement": "COMBAT_CLOTH_HEADS_SET2",
+        "craftingrequirements": {
+          "@silver": "0",
+          "@time": "0.5",
+          "@craftingfocus": "750",
+          "craftresource": {
+            "@uniquename": "T5_CLOTH",
+            "@count": "8"
+          }
+        },
+        "craftingspelllist": {
+          "craftspell": [
+            {
+              "@uniquename": "ENERGYBURST_CHANNEL"
+            },
+            {
+              "@uniquename": "PBAOE_KNOCKBACK"
+            },
+            {
+              "@uniquename": "ICEBLOCK2"
+            },
+            {
+              "@uniquename": "PASSIVE_INCREASED_DAMAGE"
+            },
+            {
+              "@uniquename": "PASSIVE_CASTSPEED"
+            },
+            {
+              "@uniquename": "PASSIVE_REDUCED_ENERGYCOST"
+            }
+          ]
+        },
+        "enchantments": {
+          "enchantment": [
+            {
+              "@enchantmentlevel": "1",
+              "@itempower": "900",
+              "@durability": "16200",
+              "craftingrequirements": {
+                "@silver": "0",
+                "@time": "0.667",
+                "@craftingfocus": "1313",
+                "craftresource": {
+                  "@uniquename": "T5_CLOTH_LEVEL1",
+                  "@enchantmentlevel": "1",
+                  "@count": "8"
+                }
+              },
+              "upgraderequirements": {
+                "upgraderesource": {
+                  "@uniquename": "T5_RUNE",
+                  "@count": "96"
+                }
+              }
+            },
+            {
+              "@enchantmentlevel": "2",
+              "@itempower": "1000",
+              "@durability": "24300",
+              "craftingrequirements": {
+                "@silver": "0",
+                "@time": "0.833",
+                "@craftingfocus": "2298",
+                "craftresource": {
+                  "@uniquename": "T5_CLOTH_LEVEL2",
+                  "@enchantmentlevel": "2",
+                  "@count": "8"
+                }
+              },
+              "upgraderequirements": {
+                "upgraderesource": {
+                  "@uniquename": "T5_SOUL",
+                  "@count": "96"
+                }
+              }
+            },
+            {
+              "@enchantmentlevel": "3",
+              "@itempower": "1100",
+              "@durability": "36450",
+              "craftingrequirements": {
+                "@silver": "0",
+                "@time": "1.25",
+                "@craftingfocus": "4021",
+                "craftresource": {
+                  "@uniquename": "T5_CLOTH_LEVEL3",
+                  "@enchantmentlevel": "3",
+                  "@count": "8"
+                }
+              },
+              "upgraderequirements": {
+                "upgraderesource": {
+                  "@uniquename": "T5_RELIC",
+                  "@count": "96"
+                }
+              }
+            },
+            {
+              "@enchantmentlevel": "4",
+              "@itempower": "1200",
+              "@durability": "54675",
+              "craftingrequirements": {
+                "@silver": "0",
+                "@time": "1.5",
+                "@craftingfocus": "7037",
+                "craftresource": {
+                  "@uniquename": "T5_CLOTH_LEVEL4",
+                  "@enchantmentlevel": "4",
+                  "@count": "8"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@uniquename": "T6_HEAD_CLOTH_SET1",
+        "@uisprite": "HEAD_CLOTH_LEVEL2",
+        "@facestate": "HOOD",
+        "@beardstate": "HALF",
+        "@slottype": "head",
+        "@shopcategory": "armor",
+        "@shopsubcategory1": "cloth_helmet",
+        "@tier": "6",
+        "@maxqualitylevel": "5",
+        "@itempower": "900",
+        "@weight": "3.8",
+        "@activespellslots": "1",
+        "@passivespellslots": "1",
+        "@hitpointsmax": "0",
+        "@hitpointsregenerationbonus": "0",
+        "@energymax": "0",
+        "@energyregenerationbonus": "0",
+        "@movespeed": "0",
+        "@maxload": "0",
+        "@magiccooldownreduction": "0",
+        "@physicalarmor": "0",
+        "@magicresistance": "0",
+        "@crowdcontrolresistance": "0",
+        "@physicalspelldamagebonus": "0",
+        "@magicspelldamagebonus": "0",
+        "@abilitypower": "100",
+        "@healbonus": "0",
+        "@physicalattackdamagebonus": "0",
+        "@magicattackdamagebonus": "0",
+        "@bonusccdurationvsplayers": "0",
+        "@bonusccdurationvsmobs": "0",
+        "@durability": "16200",
+        "@durabilityloss_attack": "1",
+        "@durabilityloss_spelluse": "1",
+        "@durabilityloss_receivedattack": "1",
+        "@durabilityloss_receivedspell": "1",
+        "@unlockedtocraft": "false",
+        "@unlockedtoequip": "false",
+        "@threatbonus": "0",
+        "@itempowerprogressiontype": "head",
+        "@bonusdefensevsplayers": "0",
+        "@bonusdefensevsmobs": "0",
+        "@magiccasttimereduction": "0",
+        "@attackspeedbonus": "0",
+        "@movespeedbonus": "0",
+        "@uicraftsoundstart": "Play_ui_action_craft_cloth_start",
+        "@uicraftsoundfinish": "Play_ui_action_craft_cloth_finish",
+        "@healmodifier": "0",
+        "@craftingcategory": "cloth_helmet",
+        "@canbeovercharged": "true",
+        "@showinmarketplace": "true",
+        "@energycostreduction": "0",
+        "@masterymodifier": "0.1",
+        "@combatspecachievement": "COMBAT_CLOTH_HEADS_SET2",
+        "craftingrequirements": {
+          "@silver": "0",
+          "@time": "0.667",
+          "@craftingfocus": "1313",
+          "craftresource": {
+            "@uniquename": "T6_CLOTH",
+            "@count": "8"
+          }
+        },
+        "craftingspelllist": {
+          "craftspell": [
+            {
+              "@uniquename": "ENERGYBURST_CHANNEL"
+            },
+            {
+              "@uniquename": "PBAOE_KNOCKBACK"
+            },
+            {
+              "@uniquename": "ICEBLOCK2"
+            },
+            {
+              "@uniquename": "PASSIVE_INCREASED_DAMAGE"
+            },
+            {
+              "@uniquename": "PASSIVE_CASTSPEED"
+            },
+            {
+              "@uniquename": "PASSIVE_REDUCED_ENERGYCOST"
+            }
+          ]
+        },
+        "enchantments": {
+          "enchantment": [
+            {
+              "@enchantmentlevel": "1",
+              "@itempower": "1000",
+              "@durability": "24300",
+              "craftingrequirements": {
+                "@silver": "0",
+                "@time": "0.833",
+                "@craftingfocus": "2298",
+                "craftresource": {
+                  "@uniquename": "T6_CLOTH_LEVEL1",
+                  "@enchantmentlevel": "1",
+                  "@count": "8"
+                }
+              },
+              "upgraderequirements": {
+                "upgraderesource": {
+                  "@uniquename": "T6_RUNE",
+                  "@count": "96"
+                }
+              }
+            },
+            {
+              "@enchantmentlevel": "2",
+              "@itempower": "1100",
+              "@durability": "36450",
+              "craftingrequirements": {
+                "@silver": "0",
+                "@time": "1.25",
+                "@craftingfocus": "4021",
+                "craftresource": {
+                  "@uniquename": "T6_CLOTH_LEVEL2",
+                  "@enchantmentlevel": "2",
+                  "@count": "8"
+                }
+              },
+              "upgraderequirements": {
+                "upgraderesource": {
+                  "@uniquename": "T6_SOUL",
+                  "@count": "96"
+                }
+              }
+            },
+            {
+              "@enchantmentlevel": "3",
+              "@itempower": "1200",
+              "@durability": "54675",
+              "craftingrequirements": {
+                "@silver": "0",
+                "@time": "1.5",
+                "@craftingfocus": "7037",
+                "craftresource": {
+                  "@uniquename": "T6_CLOTH_LEVEL3",
+                  "@enchantmentlevel": "3",
+                  "@count": "8"
+                }
+              },
+              "upgraderequirements": {
+                "upgraderesource": {
+                  "@uniquename": "T6_RELIC",
+                  "@count": "96"
+                }
+              }
+            },
+            {
+              "@enchantmentlevel": "4",
+              "@itempower": "1300",
+              "@durability": "82013",
+              "craftingrequirements": {
+                "@silver": "0",
+                "@time": "1.8",
+                "@craftingfocus": "12315",
+                "craftresource": {
+                  "@uniquename": "T6_CLOTH_LEVEL4",
+                  "@enchantmentlevel": "4",
+                  "@count": "8"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "priceItem": [
+      {
+        "location": "Black Market",
+        "item_id": "T6_HEAD_CLOTH_SET1",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 8,
+            "avg_price": 19580,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 114,
+            "avg_price": 18928,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 121,
+            "avg_price": 19335,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 118,
+            "avg_price": 19031,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 48,
+            "avg_price": 19536,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 296,
+            "avg_price": 19200,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 102,
+            "avg_price": 21103,
+            "timestamp": "2024-10-20T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Black Market",
+        "item_id": "T6_HEAD_CLOTH_SET1@1",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 18,
+            "avg_price": 30675,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 42,
+            "avg_price": 30284,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 25,
+            "avg_price": 32355,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 22,
+            "avg_price": 30733,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 39,
+            "avg_price": 29048,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 76,
+            "avg_price": 30107,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 56,
+            "avg_price": 31446,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 49,
+            "avg_price": 29747,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 21,
+            "avg_price": 29309,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Black Market",
+        "item_id": "T6_HEAD_CLOTH_SET1@2",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 13,
+            "avg_price": 115000,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 4,
+            "avg_price": 92710,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 6,
+            "avg_price": 115419,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 7,
+            "avg_price": 109082,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 7,
+            "avg_price": 110125,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 5,
+            "avg_price": 107095,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 8,
+            "avg_price": 111544,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 9,
+            "avg_price": 112593,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 12,
+            "avg_price": 112846,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Brecilien",
+        "item_id": "T6_HEAD_CLOTH_SET1",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 5,
+            "avg_price": 15589,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 65,
+            "avg_price": 15816,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 39,
+            "avg_price": 16084,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 5,
+            "avg_price": 16244,
+            "timestamp": "2024-10-17T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Brecilien",
+        "item_id": "T6_HEAD_CLOTH_SET1@1",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 18,
+            "avg_price": 30622,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 125,
+            "avg_price": 36086,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 110,
+            "avg_price": 38363,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 115,
+            "avg_price": 36177,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 137,
+            "avg_price": 32769,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 156,
+            "avg_price": 34317,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 143,
+            "avg_price": 34662,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 101,
+            "avg_price": 32960,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 127,
+            "avg_price": 32715,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Brecilien",
+        "item_id": "T6_HEAD_CLOTH_SET1@2",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 5,
+            "avg_price": 123334,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 42,
+            "avg_price": 136239,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 35,
+            "avg_price": 140088,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 33,
+            "avg_price": 140059,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 45,
+            "avg_price": 145073,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 53,
+            "avg_price": 131572,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 40,
+            "avg_price": 132002,
+            "timestamp": "2024-10-20T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Bridgewatch",
+        "item_id": "T6_HEAD_CLOTH_SET1@3",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 2,
+            "avg_price": 503991,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 1,
+            "avg_price": 498765,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 2,
+            "avg_price": 501996,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 2,
+            "avg_price": 498760,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 1,
+            "avg_price": 484443,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 7,
+            "avg_price": 355521,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 12,
+            "avg_price": 358122,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 2,
+            "avg_price": 487195,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Lymhurst",
+        "item_id": "T6_HEAD_CLOTH_SET1",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 46,
+            "avg_price": 31194,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 49,
+            "avg_price": 37539,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 24,
+            "avg_price": 40539,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 30,
+            "avg_price": 37552,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 51,
+            "avg_price": 32382,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 51,
+            "avg_price": 33076,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 60,
+            "avg_price": 32664,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Martlock",
+        "item_id": "T6_HEAD_CLOTH_SET1@1",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 33,
+            "avg_price": 33423,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 30,
+            "avg_price": 36283,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 23,
+            "avg_price": 34188,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 21,
+            "avg_price": 35576,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 30,
+            "avg_price": 30029,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 38,
+            "avg_price": 33705,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 37,
+            "avg_price": 36057,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 32,
+            "avg_price": 35850,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Martlock",
+        "item_id": "T6_HEAD_CLOTH_SET1@2",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 4,
+            "avg_price": 169822,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 5,
+            "avg_price": 201965,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 4,
+            "avg_price": 142158,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 12,
+            "avg_price": 185029,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 11,
+            "avg_price": 169011,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 7,
+            "avg_price": 164906,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 8,
+            "avg_price": 162738,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 2,
+            "avg_price": 174989,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Thetford",
+        "item_id": "T6_HEAD_CLOTH_SET1",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 2,
+            "avg_price": 18980,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 14,
+            "avg_price": 17434,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 14,
+            "avg_price": 16976,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 13,
+            "avg_price": 17660,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 16,
+            "avg_price": 17001,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 23,
+            "avg_price": 14412,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 41,
+            "avg_price": 14782,
+            "timestamp": "2024-10-20T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Thetford",
+        "item_id": "T6_HEAD_CLOTH_SET1@3",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 1,
+            "avg_price": 362988,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 7,
+            "avg_price": 359122,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 3,
+            "avg_price": 342628,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 4,
+            "avg_price": 308423,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 4,
+            "avg_price": 344992,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 3,
+            "avg_price": 356650,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 9,
+            "avg_price": 363656,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 4,
+            "avg_price": 342492,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 4,
+            "avg_price": 369986,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Black Market",
+        "item_id": "T5_HEAD_CLOTH_SET1@1",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 8,
+            "avg_price": 8773,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 46,
+            "avg_price": 8359,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 145,
+            "avg_price": 7049,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 57,
+            "avg_price": 6579,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 17,
+            "avg_price": 6915,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 8,
+            "avg_price": 7069,
+            "timestamp": "2024-10-19T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Brecilien",
+        "item_id": "T5_HEAD_CLOTH_SET1@1",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 12,
+            "avg_price": 9673,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 135,
+            "avg_price": 11500,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 161,
+            "avg_price": 11474,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 129,
+            "avg_price": 11758,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 168,
+            "avg_price": 10717,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 184,
+            "avg_price": 12014,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 173,
+            "avg_price": 11331,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 107,
+            "avg_price": 9923,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 54,
+            "avg_price": 9880,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Brecilien",
+        "item_id": "T5_HEAD_CLOTH_SET1@3",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 7,
+            "avg_price": 142445,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 34,
+            "avg_price": 161716,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 33,
+            "avg_price": 159225,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 26,
+            "avg_price": 162272,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 29,
+            "avg_price": 161631,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 28,
+            "avg_price": 159564,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Caerleon",
+        "item_id": "T5_HEAD_CLOTH_SET1@1",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 1,
+            "avg_price": 21197,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 11,
+            "avg_price": 10462,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 7,
+            "avg_price": 12373,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 12,
+            "avg_price": 10829,
+            "timestamp": "2024-10-17T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Caerleon",
+        "item_id": "T5_HEAD_CLOTH_SET1@2",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 2,
+            "avg_price": 43746,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 3,
+            "avg_price": 59971,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 2,
+            "avg_price": 52483,
+            "timestamp": "2024-10-16T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Lymhurst",
+        "item_id": "T5_HEAD_CLOTH_SET1@2",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 2,
+            "avg_price": 39992,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 38,
+            "avg_price": 36524,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 22,
+            "avg_price": 36089,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 39,
+            "avg_price": 35150,
+            "timestamp": "2024-10-17T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Thetford",
+        "item_id": "T5_HEAD_CLOTH_SET1@2",
+        "quality": 4,
+        "data": [
+          {
+            "item_count": 7,
+            "avg_price": 32632,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 10,
+            "avg_price": 32137,
+            "timestamp": "2024-10-15T00:00:00"
+          }
+        ]
+      }
+    ],
+    "ressourcePrice": [
+      {
+        "location": "Brecilien",
+        "item_id": "T6_CLOTH",
+        "quality": 1,
+        "data": [
+          {
+            "item_count": 172,
+            "avg_price": 4664,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 749,
+            "avg_price": 4311,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 1095,
+            "avg_price": 4853,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 2652,
+            "avg_price": 4867,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 64,
+            "avg_price": 4399,
+            "timestamp": "2024-10-18T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Bridgewatch",
+        "item_id": "T6_CLOTH",
+        "quality": 1,
+        "data": [
+          {
+            "item_count": 641,
+            "avg_price": 3889,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 12100,
+            "avg_price": 3832,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 6510,
+            "avg_price": 3711,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 7334,
+            "avg_price": 3701,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 9122,
+            "avg_price": 3637,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 16855,
+            "avg_price": 3432,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 11488,
+            "avg_price": 3564,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 19263,
+            "avg_price": 3701,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 4990,
+            "avg_price": 3820,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Caerleon",
+        "item_id": "T6_CLOTH",
+        "quality": 1,
+        "data": [
+          {
+            "item_count": 269,
+            "avg_price": 4253,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 1787,
+            "avg_price": 4266,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 2373,
+            "avg_price": 4291,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 2479,
+            "avg_price": 4416,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 4927,
+            "avg_price": 4489,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 2568,
+            "avg_price": 4660,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 2001,
+            "avg_price": 4800,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 2285,
+            "avg_price": 4714,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 8629,
+            "avg_price": 4578,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Fort Sterling",
+        "item_id": "T6_CLOTH",
+        "quality": 1,
+        "data": [
+          {
+            "item_count": 2168,
+            "avg_price": 3727,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 13659,
+            "avg_price": 3825,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 2835,
+            "avg_price": 3859,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 14100,
+            "avg_price": 3572,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 13509,
+            "avg_price": 3029,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 19616,
+            "avg_price": 3357,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 15906,
+            "avg_price": 3362,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 19292,
+            "avg_price": 3260,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 30,
+            "avg_price": 3244,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Lymhurst",
+        "item_id": "T6_CLOTH",
+        "quality": 1,
+        "data": [
+          {
+            "item_count": 5495,
+            "avg_price": 3670,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 44493,
+            "avg_price": 3585,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 41498,
+            "avg_price": 3488,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 34102,
+            "avg_price": 3637,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 39109,
+            "avg_price": 3653,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 67347,
+            "avg_price": 3581,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 53448,
+            "avg_price": 3593,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 49060,
+            "avg_price": 3751,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 43461,
+            "avg_price": 3697,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Martlock",
+        "item_id": "T6_CLOTH",
+        "quality": 1,
+        "data": [
+          {
+            "item_count": 99,
+            "avg_price": 3603,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 9494,
+            "avg_price": 3935,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 12329,
+            "avg_price": 4040,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 8710,
+            "avg_price": 4079,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 5008,
+            "avg_price": 3929,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 8050,
+            "avg_price": 3753,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 21279,
+            "avg_price": 3748,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 3394,
+            "avg_price": 3694,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 16391,
+            "avg_price": 3857,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Thetford",
+        "item_id": "T6_CLOTH",
+        "quality": 1,
+        "data": [
+          {
+            "item_count": 1569,
+            "avg_price": 3784,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 11387,
+            "avg_price": 3704,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 6401,
+            "avg_price": 3780,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 9389,
+            "avg_price": 3619,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 6273,
+            "avg_price": 3645,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 16003,
+            "avg_price": 3659,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 15156,
+            "avg_price": 3641,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 8571,
+            "avg_price": 3725,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 14732,
+            "avg_price": 3659,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Black Market",
+        "item_id": "T5_CLOTH",
+        "quality": 1,
+        "data": [
+          {
+            "item_count": 38292,
+            "avg_price": 629,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 5563,
+            "avg_price": 616,
+            "timestamp": "2024-10-15T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Brecilien",
+        "item_id": "T5_CLOTH",
+        "quality": 1,
+        "data": [
+          {
+            "item_count": 3139,
+            "avg_price": 915,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 1918,
+            "avg_price": 852,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 3582,
+            "avg_price": 836,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 4909,
+            "avg_price": 859,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 3176,
+            "avg_price": 834,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 5116,
+            "avg_price": 819,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 6027,
+            "avg_price": 755,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 270,
+            "avg_price": 695,
+            "timestamp": "2024-10-21T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Bridgewatch",
+        "item_id": "T5_CLOTH",
+        "quality": 1,
+        "data": [
+          {
+            "item_count": 1190,
+            "avg_price": 635,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 16062,
+            "avg_price": 631,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 21369,
+            "avg_price": 623,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 19644,
+            "avg_price": 604,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 33213,
+            "avg_price": 623,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 46639,
+            "avg_price": 647,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 37924,
+            "avg_price": 601,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 25186,
+            "avg_price": 664,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 18899,
+            "avg_price": 632,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Caerleon",
+        "item_id": "T5_CLOTH",
+        "quality": 1,
+        "data": [
+          {
+            "item_count": 4381,
+            "avg_price": 955,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 4050,
+            "avg_price": 918,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 8006,
+            "avg_price": 960,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 9788,
+            "avg_price": 958,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 11532,
+            "avg_price": 939,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 10064,
+            "avg_price": 1007,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 3425,
+            "avg_price": 1023,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 7929,
+            "avg_price": 940,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 14042,
+            "avg_price": 918,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Fort Sterling",
+        "item_id": "T5_CLOTH",
+        "quality": 1,
+        "data": [
+          {
+            "item_count": 7154,
+            "avg_price": 684,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 18878,
+            "avg_price": 623,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 59884,
+            "avg_price": 617,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 33239,
+            "avg_price": 629,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 35533,
+            "avg_price": 616,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 39967,
+            "avg_price": 660,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 35360,
+            "avg_price": 639,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 24301,
+            "avg_price": 604,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 15732,
+            "avg_price": 601,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Lymhurst",
+        "item_id": "T5_CLOTH",
+        "quality": 1,
+        "data": [
+          {
+            "item_count": 38292,
+            "avg_price": 629,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 58496,
+            "avg_price": 582,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 134345,
+            "avg_price": 613,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 138588,
+            "avg_price": 610,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 200551,
+            "avg_price": 653,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 211422,
+            "avg_price": 637,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 210563,
+            "avg_price": 627,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 126710,
+            "avg_price": 640,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 170673,
+            "avg_price": 608,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Martlock",
+        "item_id": "T5_CLOTH",
+        "quality": 1,
+        "data": [
+          {
+            "item_count": 931,
+            "avg_price": 756,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 11851,
+            "avg_price": 690,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 21960,
+            "avg_price": 666,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 31615,
+            "avg_price": 637,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 12237,
+            "avg_price": 606,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 56477,
+            "avg_price": 633,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 21540,
+            "avg_price": 622,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 21108,
+            "avg_price": 636,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 36992,
+            "avg_price": 662,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      },
+      {
+        "location": "Thetford",
+        "item_id": "T5_CLOTH",
+        "quality": 1,
+        "data": [
+          {
+            "item_count": 4767,
+            "avg_price": 640,
+            "timestamp": "2024-10-14T00:00:00"
+          },
+          {
+            "item_count": 35410,
+            "avg_price": 657,
+            "timestamp": "2024-10-15T00:00:00"
+          },
+          {
+            "item_count": 38539,
+            "avg_price": 684,
+            "timestamp": "2024-10-16T00:00:00"
+          },
+          {
+            "item_count": 13495,
+            "avg_price": 619,
+            "timestamp": "2024-10-17T00:00:00"
+          },
+          {
+            "item_count": 43069,
+            "avg_price": 630,
+            "timestamp": "2024-10-18T00:00:00"
+          },
+          {
+            "item_count": 29644,
+            "avg_price": 624,
+            "timestamp": "2024-10-19T00:00:00"
+          },
+          {
+            "item_count": 36133,
+            "avg_price": 604,
+            "timestamp": "2024-10-20T00:00:00"
+          },
+          {
+            "item_count": 20742,
+            "avg_price": 707,
+            "timestamp": "2024-10-21T00:00:00"
+          },
+          {
+            "item_count": 29695,
+            "avg_price": 639,
+            "timestamp": "2024-10-22T00:00:00"
+          }
+        ]
+      }
+    ]
+  }
 }

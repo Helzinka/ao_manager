@@ -89,7 +89,6 @@ defineProps({
 });
 
 const itemStore = useItemStore();
-
 const tierList = ref([
   { value: '0', label: 'all' },
   { value: '1', label: '1' },
@@ -114,12 +113,12 @@ const sub_category = computed(() => {
   }));
 });
 
-const items = computed(() => {
-  return itemStore.getItems.map((item: any) => ({
-    value: item['@uniquename'],
-    label: item['@uniquename'],
-  }));
-});
+// const items = computed(() => {
+//   return itemStore.getItems.map((item: any) => ({
+//     value: item['@uniquename'],
+//     label: item['@uniquename'],
+//   }));
+// });
 </script>
 
 <style scoped></style>

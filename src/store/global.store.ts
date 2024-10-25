@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 
-export const useGlobalStore = defineStore('globalStore', {
+export const useGlobalStore = defineStore('global', {
   state: () => ({
     region: 'Europe',
     regionList: ['West', 'East', 'Europe'],
