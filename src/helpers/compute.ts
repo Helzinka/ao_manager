@@ -18,14 +18,14 @@ export function gain(
   ressourcePrice: number,
   ressourceQty: number,
   rrr: number
-) {
+): string {
   if (itemPrice <= 0 || ressourcePrice <= 0 || ressourceQty <= 0) {
-    return 0;
+    return '0 %';
   }
   let profit = itemPrice - ressourceQty * (1 - rrr / 100) * ressourcePrice;
   let total = itemPrice + profit;
   let evolution = Math.round(((total - itemPrice) / itemPrice) * 100);
-  return evolution > 0 ? `+${evolution}%` : `-${evolution}%`;
+  return evolution > 0 ? `+ ${evolution}%` : `- ${evolution}%`;
 }
 
 export function cost(

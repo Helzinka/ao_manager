@@ -3,25 +3,39 @@ import { craft } from '@/data/mock.json';
 import { useItemStore } from './item.store';
 import { cost, gain, profit } from '@/helpers/compute';
 
-const state = {
+interface data {
+  itemName: string;
+  ressourceName1: string;
+  ressourceQty1: number;
+  ressourcePrice1: number;
+  itemPrice: number;
+  demand: number;
+  profit: number;
+  gain: string;
+  cost: number;
+}
+
+interface state {
+  rrr: number;
+  cityBonus: boolean;
+  data: [data];
+}
+
+const state: state = {
   rrr: 24.8,
   cityBonus: true,
-
   data: [
-    // {
-    //   itemName: 'T5_HEAD_CLOTH_SET2',
-    //   itemPrice: 1000,
-    //   itemPriceManual: 0,
-    //   ressourceName1: 'T4_CLOTH',
-    //   ressourcePrice1: 20,
-    //   ressourceQty1: 8,
-    //   ressourcePriceManual1: 0,
-    //   demand: 1,
-    //   profit: 1,
-    //   gain: 1000,
-    //   cost: 1,
-    //   qty: 1,
-    // },
+    {
+      itemName: '',
+      ressourceName1: '',
+      ressourceQty1: 0,
+      ressourcePrice1: 0,
+      itemPrice: 0,
+      demand: 0,
+      profit: 0,
+      gain: '',
+      cost: 0,
+    },
   ],
 };
 
@@ -29,7 +43,7 @@ export const useCraftStore = defineStore('craft', {
   state: () => state,
   getters: {},
   actions: {
-    applyReturnRate() {
+    changeReturnRate() {
       this.data.map(item => {
         item.profit = profit(
           item.itemPrice,
@@ -51,12 +65,12 @@ export const useCraftStore = defineStore('craft', {
     generateTable() {
       const itemStore = useItemStore();
       for (const item of craft.item) {
-        let tempObj = {
+        let tempObj: data = {
+          itemPrice: 0,
           itemName: item['@uniquename'],
-
           ressourceName1:
             item.craftingrequirements.craftresource['@uniquename'],
-          ressourceQty1: item.craftingrequirements.craftresource['@count'],
+          ressourceQty1: +item.craftingrequirements.craftresource['@count'],
           ressourcePrice1:
             craft.ressourcePrice.find(elem => {
               return (
@@ -64,7 +78,10 @@ export const useCraftStore = defineStore('craft', {
                   elem.item_id && elem.location === itemStore.citySelected
               );
             })?.data[0].avg_price || 0,
-          qty: 0,
+          demand: 0,
+          gain: '',
+          profit: 0,
+          cost: 0,
         };
 
         let itemFound = craft.priceItem.find(elem => {

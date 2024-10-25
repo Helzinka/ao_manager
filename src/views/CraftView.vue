@@ -6,7 +6,7 @@
     controls-position="right"
     :min="0"
     v-model="craftStore.rrr"
-    @change="craftStore.applyReturnRate()"
+    @change="craftStore.changeReturnRate()"
   />
   <br />
 
