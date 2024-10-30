@@ -11,6 +11,7 @@ declare module 'vue' {
     BaseSide: typeof import('./src/components/layouts/BaseSide.vue')['default']
     CartButton: typeof import('./src/components/CartButton.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
+    ElBadge: typeof import('element-plus/es')['ElBadge']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
