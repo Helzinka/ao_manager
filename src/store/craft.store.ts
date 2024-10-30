@@ -3,12 +3,14 @@ import { craft } from '@/data/mock.json';
 import { useItemStore } from './item.store';
 import { cost, gain, profit } from '@/helpers/compute';
 
-interface data {
+interface column {
   itemName: string;
+  itemPrice: number;
+  itemPriceManual: number;
   ressourceName1: string;
   ressourceQty1: number;
   ressourcePrice1: number;
-  itemPrice: number;
+  ressourcePriceManual1: number;
   demand: number;
   profit: number;
   gain: string;
@@ -18,25 +20,13 @@ interface data {
 interface state {
   rrr: number;
   cityBonus: boolean;
-  data: [data];
+  row: column[];
 }
 
 const state: state = {
   rrr: 24.8,
   cityBonus: true,
-  data: [
-    {
-      itemName: '',
-      ressourceName1: '',
-      ressourceQty1: 0,
-      ressourcePrice1: 0,
-      itemPrice: 0,
-      demand: 0,
-      profit: 0,
-      gain: '',
-      cost: 0,
-    },
-  ],
+  row: [],
 };
 
 export const useCraftStore = defineStore('craft', {
@@ -44,30 +34,31 @@ export const useCraftStore = defineStore('craft', {
   getters: {},
   actions: {
     changeReturnRate() {
-      this.data.map(item => {
-        item.profit = profit(
-          item.itemPrice,
-          item.ressourcePrice1,
-          item.ressourceQty1,
+      this.row.map(col => {
+        let ressourcePrice = col.ressourcePriceManual1 || col.ressourcePrice1;
+        let itemPrice = col.itemPriceManual || col.itemPrice;
+        col.profit = profit(
+          itemPrice,
+          ressourcePrice,
+          col.ressourceQty1,
           this.rrr
         );
-
-        item.gain = gain(
-          item.itemPrice,
-          item.ressourcePrice1,
-          item.ressourceQty1,
+        col.gain = gain(
+          itemPrice,
+          col.ressourcePrice1,
+          col.ressourceQty1,
           this.rrr
         );
-
-        item.cost = cost(item.ressourcePrice1, item.ressourceQty1, this.rrr);
+        col.cost = cost(col.ressourcePrice1, col.ressourceQty1, this.rrr);
       });
     },
     generateTable() {
       const itemStore = useItemStore();
       for (const item of craft.item) {
-        let tempObj: data = {
-          itemPrice: 0,
+        let column: column = {
           itemName: item['@uniquename'],
+          itemPrice: 0,
+          itemPriceManual: 0,
           ressourceName1:
             item.craftingrequirements.craftresource['@uniquename'],
           ressourceQty1: +item.craftingrequirements.craftresource['@count'],
@@ -78,6 +69,7 @@ export const useCraftStore = defineStore('craft', {
                   elem.item_id && elem.location === itemStore.citySelected
               );
             })?.data[0].avg_price || 0,
+          ressourcePriceManual1: 0,
           demand: 0,
           gain: '',
           profit: 0,
@@ -90,30 +82,31 @@ export const useCraftStore = defineStore('craft', {
             elem.location === itemStore.citySelected
           );
         });
-        tempObj.itemPrice = itemFound?.data[0].avg_price || 0;
-        tempObj.demand = itemFound?.data[0].item_count || 0;
+        column.itemPrice = itemFound?.data[0].avg_price || 0;
+        column.demand = itemFound?.data[0].item_count || 0;
 
-        tempObj.profit = profit(
-          tempObj.itemPrice,
-          tempObj.ressourcePrice1,
-          tempObj.ressourceQty1,
+        column.profit = profit(
+          column.itemPrice,
+          column.ressourcePrice1,
+          column.ressourceQty1,
           this.rrr
         );
 
-        tempObj.gain = gain(
-          tempObj.itemPrice,
-          tempObj.ressourcePrice1,
-          tempObj.ressourceQty1,
+        column.gain = gain(
+          column.itemPrice,
+          column.ressourcePrice1,
+          column.ressourceQty1,
           this.rrr
         );
 
-        tempObj.cost = cost(
-          tempObj.ressourcePrice1,
-          tempObj.ressourceQty1,
+        column.cost = cost(
+          column.ressourcePrice1,
+          column.ressourceQty1,
           this.rrr
         );
 
-        this.data.push(tempObj);
+        console.log(column);
+        this.row.push(column);
       }
     },
   },

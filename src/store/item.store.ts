@@ -1,4 +1,4 @@
-import { formatNumberWithEscape, getTranslate } from '@/plugins/format';
+import { formatNumberWithEscape } from '@/plugins/format';
 import { defineStore } from 'pinia';
 import fake_data from '@/data/mock.json';
 import { shopcategories } from '@/data/shopcategories.json';

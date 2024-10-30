@@ -50,7 +50,7 @@
         :value="tier.value"
       />
     </el-select>
-    <el-select
+    <!-- <el-select
       v-model="itemStore.itemSelected"
       placeholder="Item"
       filterable
@@ -66,7 +66,7 @@
         :label="item.label"
         :value="item.value"
       />
-    </el-select>
+    </el-select> -->
     <el-button type="primary" plain @click="search" :icon="Search">
       Rechercher
     </el-button>

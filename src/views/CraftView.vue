@@ -11,7 +11,7 @@
   <br />
 
   <el-table
-    :data="craftStore.data"
+    :data="craftStore.row"
     tyle="width: 100%"
     border
     stripe
