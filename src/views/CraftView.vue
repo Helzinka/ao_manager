@@ -1,22 +1,8 @@
 <template>
   <ItemSelector></ItemSelector>
+  <CraftSelector></CraftSelector>
   <el-divider />
-  <el-input-number
-    size="small"
-    controls-position="right"
-    :min="0"
-    v-model="craftStore.rrr"
-    @change="craftStore.changeReturnRate()"
-  />
-  <br />
-
-  <el-table
-    :data="craftStore.row"
-    tyle="width: 100%"
-    border
-    stripe
-    highlight-current-row
-  >
+  <el-table :data="craftStore.row" tyle="width: 100%" border stripe>
     <!-- item  -->
     <el-table-column label="Item">
       <el-table-column prop="itemName" label="name" />
@@ -55,16 +41,24 @@
     <!-- qty -->
     <el-table-column prop="add" label="Add">
       <template #default="scope">
-        <el-button size="small">add</el-button>
+        <el-button
+          type="primary"
+          size="small"
+          @click="cartStore.addItem(scope.row, craftStore.rrr)"
+        >
+          add
+        </el-button>
       </template>
     </el-table-column>
   </el-table>
 </template>
 
 <script setup lang="ts">
+import { useCartStore } from '@/store/cart.store';
 import { useCraftStore } from '@/store/craft.store';
 import { onMounted, ref } from 'vue';
 const craftStore = useCraftStore();
+const cartStore = useCartStore();
 
 onMounted(() => {
   craftStore.generateTable();

@@ -2,22 +2,32 @@ import { defineStore } from 'pinia';
 
 interface state {
   open: boolean;
-  items: string[];
+  cart: string[];
 }
 
 const state: state = {
   open: false,
-  items: ['ok', 'ok2'],
+  cart: [],
 };
 
 export const useCartStore = defineStore('cart', {
   state: () => state,
+  getters: {
+    totalItems: state => {
+      return state.cart.length ? state.cart.length : '';
+    },
+  },
   actions: {
-    addItem(item: string) {
-      this.items.push(item);
+    addItem(item: any, rrr: number) {
+      item.qty = 1;
+      item.rrr = rrr;
+      this.cart.push(item);
     },
     removeItem(index: number) {
-      this.items.splice(index, 1);
+      this.cart.splice(index, 1);
+    },
+    cleanCart() {
+      this.cart = [];
     },
   },
 });

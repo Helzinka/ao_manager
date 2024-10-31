@@ -6,10 +6,8 @@
     <div class="flex gap-2 items-center">
       <RegionSelector />
       <LangSelector />
-      <el-menu-item>
-        <CartButton />
-      </el-menu-item>
-      <el-menu-item h="full" @click="toggleDark()">
+      <CartButton />
+      <el-menu-item @click="toggleDark()">
         <button
           class="w-full cursor-pointer border-none bg-transparent"
           style="height: var(--ep-menu-item-height)"

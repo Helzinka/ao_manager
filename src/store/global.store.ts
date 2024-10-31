@@ -2,10 +2,12 @@ import { defineStore } from 'pinia';
 
 export const useGlobalStore = defineStore('global', {
   state: () => ({
-    region: 'Europe',
-    regionList: ['West', 'East', 'Europe'],
-    lang: 'Français',
-    langList: {
+    userSelected: 'paul',
+    users: ['paul', 'john', 'jane'],
+    regionSelected: 'Europe',
+    regions: ['West', 'East', 'Europe'],
+    langSelected: 'Français',
+    langs: {
       Français: 'FR-FR',
       English: 'EN-US',
       Deutsch: 'DE-DE',
@@ -25,11 +27,11 @@ export const useGlobalStore = defineStore('global', {
   }),
   persist: true,
   getters: {
-    getRegionList(state) {
-      return state.regionList;
+    getRegions(state) {
+      return state.regions;
     },
-    getLangList(state) {
-      return state.langList;
+    getLangs(state) {
+      return state.langs;
     },
   },
   actions: {},

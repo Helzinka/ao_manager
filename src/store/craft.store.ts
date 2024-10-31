@@ -105,7 +105,6 @@ export const useCraftStore = defineStore('craft', {
           this.rrr
         );
 
-        console.log(column);
         this.row.push(column);
       }
     },

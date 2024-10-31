@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-select
-      v-model="globalStore.lang"
+      v-model="globalStore.langSelected"
       filterable
       title="Lang"
       placeholder="Lang"
@@ -21,7 +21,7 @@
 import { useGlobalStore } from '@/store/global.store';
 
 const globalStore = useGlobalStore();
-const langList = Object.keys(globalStore.getLangList).map(region => ({
+const langList = Object.keys(globalStore.getLangs).map(region => ({
   value: region,
   label: region,
 }));

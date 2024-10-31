@@ -1,14 +1,14 @@
 <template>
   <div>
     <el-select
-      v-model="globalStore.region"
+      v-model="globalStore.regionSelected"
       filterable
       title="Region"
       placeholder="Region"
       style="width: 120px"
     >
       <el-option
-        v-for="region in regionsList"
+        v-for="region in regions"
         :key="region.value"
         :label="region.label"
         :value="region.value"
@@ -21,7 +21,7 @@
 import { useGlobalStore } from '@/store/global.store';
 
 const globalStore = useGlobalStore();
-const regionsList = globalStore.getRegionList.map(region => ({
+const regions = globalStore.getRegions.map(region => ({
   value: region,
   label: region,
 }));

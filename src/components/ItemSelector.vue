@@ -71,6 +71,7 @@
       Rechercher
     </el-button>
   </div>
+  <el-divider />
 </template>
 
 <script setup lang="ts">
