@@ -2,7 +2,12 @@
   <ItemSelector></ItemSelector>
   <CraftSelector></CraftSelector>
   <el-divider />
-  <el-table :data="craftStore.row" tyle="width: 100%" border stripe>
+  <el-table
+    :data="craftStore.row"
+    tyle="width: 100%"
+    stripe
+    table-layout="auto"
+  >
     <!-- item  -->
     <el-table-column label="Item">
       <el-table-column prop="itemName" label="name" />
@@ -35,8 +40,8 @@
     </el-table-column>
     <!-- other -->
     <el-table-column prop="demand" label="Demand" />
-    <el-table-column prop="profit" label="Profit" />
-    <el-table-column prop="gain" label="Gain" />
+    <el-table-column prop="profit" label="Profit" sortable />
+    <el-table-column prop="gain" label="Gain" sortable />
     <el-table-column prop="cost" label="Cost" />
     <!-- qty -->
     <el-table-column prop="add" label="Add">
@@ -54,15 +59,20 @@
 </template>
 
 <script setup lang="ts">
+import { spreadNumber } from '@/helpers/compute';
 import { useCartStore } from '@/store/cart.store';
 import { useCraftStore } from '@/store/craft.store';
-import { onMounted, ref } from 'vue';
+import { onMounted, toRaw } from 'vue';
 const craftStore = useCraftStore();
 const cartStore = useCartStore();
 
 onMounted(() => {
   craftStore.generateTable();
 });
+
+const formatGain = (row: any) => {
+  return row.gain > 0 ? `+ ${row.gain} %` : `${row.gain} %`;
+};
 </script>
 
 <style scoped></style>

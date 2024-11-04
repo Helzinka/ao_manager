@@ -13,7 +13,7 @@ interface column {
   ressourcePriceManual1: number;
   demand: number;
   profit: number;
-  gain: string;
+  gain: number;
   cost: number;
 }
 
@@ -71,7 +71,7 @@ export const useCraftStore = defineStore('craft', {
             })?.data[0].avg_price || 0,
           ressourcePriceManual1: 0,
           demand: 0,
-          gain: '',
+          gain: 0,
           profit: 0,
           cost: 0,
         };

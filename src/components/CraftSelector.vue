@@ -1,5 +1,5 @@
 <template>
-  <el-descriptions border>
+  <el-descriptions>
     <el-descriptions-item label="Craft user" width="80">
       <el-select
         v-model="globalStore.userSelected"
