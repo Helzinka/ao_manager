@@ -9,7 +9,7 @@ export function profit(
   if (itemPrice <= 0 || ressourcePrice <= 0 || ressourceQty <= 0) {
     return 0;
   }
-  const itemSold = fees(fee, itemPrice * qty);
+  const itemSold = itemPrice * qty - fees(fee, itemPrice * qty);
   const itemCost = cost(rate, fee, ressourcePrice, ressourceQty, qty);
   const compute = itemSold - itemCost;
   return parseFloat(compute.toFixed(2));
@@ -89,10 +89,10 @@ export function spreadNumber(number: number) {
   return number.toLocaleString('fr-FR', { useGrouping: true });
 }
 
-function rerollCost(
+export function rerollCost(
   itemValue: number,
   quality: 'normal' | 'good' | 'outstanding' | 'excellent',
-  globaldiscount: number
+  globalDiscount: number
 ) {
   const rerollRate = {
     normal: 1,
@@ -100,10 +100,8 @@ function rerollCost(
     outstanding: 1.5,
     excellent: 6.25,
   };
-  return (
-    Math.ceil(itemValue * 4.400017 * rerollRate[quality]) *
-    (1 - globaldiscount / 100)
-  );
+  const rate = 1 - globalDiscount / 100;
+  const cost = itemValue * 4.400017 * rerollRate[quality];
+  const compute = cost * rate;
+  return Math.ceil(compute);
 }
-
-console.log(rerollCost(itemValue, 'normal', globaldiscount));
