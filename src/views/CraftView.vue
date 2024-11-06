@@ -3,7 +3,7 @@
   <CraftSelector></CraftSelector>
   <el-divider />
   <el-table
-    :data="craftStore.row"
+    :data="craftStore.craft"
     tyle="width: 100%"
     stripe
     table-layout="auto"

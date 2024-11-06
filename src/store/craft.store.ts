@@ -3,7 +3,7 @@ import { craft } from '@/data/mock.json';
 import { useItemStore } from './item.store';
 import { cost, gain, profit } from '@/helpers/compute';
 
-interface column {
+interface items {
   itemName: string;
   itemPrice: number;
   itemPriceManual: number;
@@ -19,14 +19,16 @@ interface column {
 
 interface state {
   rrr: number;
+  fee: number;
   cityBonus: boolean;
-  row: column[];
+  craft: items[];
 }
 
 const state: state = {
   rrr: 24.8,
+  fee: 6.5,
   cityBonus: true,
-  row: [],
+  craft: [],
 };
 
 export const useCraftStore = defineStore('craft', {
@@ -34,28 +36,30 @@ export const useCraftStore = defineStore('craft', {
   getters: {},
   actions: {
     changeReturnRate() {
-      this.row.map(col => {
-        let ressourcePrice = col.ressourcePriceManual1 || col.ressourcePrice1;
-        let itemPrice = col.itemPriceManual || col.itemPrice;
-        col.profit = profit(
+      this.craft.map(c => {
+        let ressourcePrice = c.ressourcePriceManual1 || c.ressourcePrice1;
+        let itemPrice = c.itemPriceManual || c.itemPrice;
+        c.profit = profit(
+          this.rrr,
+          this.fee,
           itemPrice,
           ressourcePrice,
-          col.ressourceQty1,
-          this.rrr
+          c.ressourceQty1
         );
-        col.gain = gain(
+        c.gain = gain(
+          this.rrr,
+          this.fee,
           itemPrice,
-          col.ressourcePrice1,
-          col.ressourceQty1,
-          this.rrr
+          c.ressourcePrice1,
+          c.ressourceQty1
         );
-        col.cost = cost(col.ressourcePrice1, col.ressourceQty1, this.rrr);
+        c.cost = cost(this.rrr, this.fee, c.ressourcePrice1, c.ressourceQty1);
       });
     },
     generateTable() {
       const itemStore = useItemStore();
       for (const item of craft.item) {
-        let column: column = {
+        let tempItem: items = {
           itemName: item['@uniquename'],
           itemPrice: 0,
           itemPriceManual: 0,
@@ -63,10 +67,10 @@ export const useCraftStore = defineStore('craft', {
             item.craftingrequirements.craftresource['@uniquename'],
           ressourceQty1: +item.craftingrequirements.craftresource['@count'],
           ressourcePrice1:
-            craft.ressourcePrice.find(elem => {
+            craft.ressourcePrice.find(c => {
               return (
                 item.craftingrequirements.craftresource['@uniquename'] ===
-                  elem.item_id && elem.location === itemStore.citySelected
+                  c.item_id && c.location === itemStore.citySelected
               );
             })?.data[0].avg_price || 0,
           ressourcePriceManual1: 0,
@@ -76,36 +80,39 @@ export const useCraftStore = defineStore('craft', {
           cost: 0,
         };
 
-        let itemFound = craft.priceItem.find(elem => {
+        let itemFound = craft.priceItem.find(c => {
           return (
-            item['@uniquename'] === elem.item_id &&
-            elem.location === itemStore.citySelected
+            item['@uniquename'] === c.item_id &&
+            c.location === itemStore.citySelected
           );
         });
-        column.itemPrice = itemFound?.data[0].avg_price || 0;
-        column.demand = itemFound?.data[0].item_count || 0;
+        tempItem.itemPrice = itemFound?.data[0].avg_price || 0;
+        tempItem.demand = itemFound?.data[0].item_count || 0;
 
-        column.profit = profit(
-          column.itemPrice,
-          column.ressourcePrice1,
-          column.ressourceQty1,
-          this.rrr
+        tempItem.profit = profit(
+          this.rrr,
+          this.fee,
+          tempItem.itemPrice,
+          tempItem.ressourcePrice1,
+          tempItem.ressourceQty1
         );
 
-        column.gain = gain(
-          column.itemPrice,
-          column.ressourcePrice1,
-          column.ressourceQty1,
-          this.rrr
+        tempItem.gain = gain(
+          this.rrr,
+          this.fee,
+          tempItem.itemPrice,
+          tempItem.ressourcePrice1,
+          tempItem.ressourceQty1
         );
 
-        column.cost = cost(
-          column.ressourcePrice1,
-          column.ressourceQty1,
-          this.rrr
+        tempItem.cost = cost(
+          this.rrr,
+          this.fee,
+          tempItem.ressourcePrice1,
+          tempItem.ressourceQty1
         );
 
-        this.row.push(column);
+        this.craft.push(tempItem);
       }
     },
   },

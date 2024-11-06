@@ -30,6 +30,7 @@
           controls-position="right"
           :min="0"
           v-model="scope.row.qty"
+          @change="cartStore.generateTodoList()"
         />
       </template>
     </el-table-column>
@@ -40,12 +41,25 @@
           type="danger"
           size="small"
           @click="cartStore.removeItem(scope.row)"
+          @change="cartStore.generateTodoList()"
         >
           remove
         </el-button>
       </template>
     </el-table-column>
   </el-table>
+
+  <div>
+    <h1>Todo List des Ressources</h1>
+    <ul>
+      <li v-for="resource in cartStore.market" :key="resource.name">
+        {{ resource.name }}:
+        <el-input-number v-model="resource.currentQty"></el-input-number>
+        /
+        <span>{{ resource.qty }}</span>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script setup lang="ts">
