@@ -115,7 +115,6 @@ export const useCartStore = defineStore('cart', {
       this.cart = [];
     },
     generateTodoList() {
-      console.log('ojk');
       this.market = this.cart.reduce(
         (acc: { name: string; currentQty: number; qty: number }[], item) => {
           const resource = {

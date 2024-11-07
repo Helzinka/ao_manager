@@ -27,7 +27,7 @@ const router = createRouter({
       path: '/ressource',
       name: 'ressource',
       component: async () =>
-        await import('@/views/ressourceView/RessourceView.vue'),
+        await import('@/views/ressource/RessourceView.vue'),
     },
     {
       path: '/parameter',
@@ -42,6 +42,6 @@ const router = createRouter({
   ],
 });
 
-router.replace('/parameter');
+router.replace('/craft');
 
 export default router;

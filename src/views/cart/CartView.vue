@@ -8,9 +8,9 @@
     <!-- item  -->
     <el-table-column prop="itemName" label="name" />
     <!-- compute data -->
-    <el-table-column prop="cost" label="Cost" />
     <el-table-column prop="profit" label="Profit" />
     <el-table-column prop="gain" label="Gain" />
+    <el-table-column prop="cost" label="Cost" />
     <!-- rrr -->
     <el-table-column prop="rrr" label="Return">
       <template #default="scope">
@@ -48,22 +48,11 @@
       </template>
     </el-table-column>
   </el-table>
-
-  <div>
-    <h1>Todo List des Ressources</h1>
-    <ul>
-      <li v-for="resource in cartStore.market" :key="resource.name">
-        {{ resource.name }}:
-        <el-input-number v-model="resource.currentQty"></el-input-number>
-        /
-        <span>{{ resource.qty }}</span>
-      </li>
-    </ul>
-  </div>
 </template>
 
 <script setup lang="ts">
 import { useCartStore } from '@/store/cart.store';
+
 const cartStore = useCartStore();
 </script>
 

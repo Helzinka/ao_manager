@@ -1,18 +1,7 @@
 <template>
   <div>
     <h1>ParameterView</h1>
-    <el-button
-      @click="
-        add({
-          itemName: 'item1',
-          itemPrice: 10,
-          itemRessourceQty: 1,
-          itemRessourceType: 'ressource',
-        })
-      "
-    >
-      add
-    </el-button>
+    <el-button @click="add()">add</el-button>
     <div class="flex gap-2 mt-4">
       <el-check-tag
         v-for="item in type"
@@ -76,8 +65,14 @@ const data = ref([
   },
 ]);
 
-const add = (item: any) => {
-  item.itemRessourceType = `${item.itemRessourceType + Math.ceil(Math.random() * 10)}`;
+const add = () => {
+  const item = {
+    itemName: 'item1',
+    itemPrice: 10,
+    itemRessourceQty: 1,
+    itemRessourceType: '',
+  };
+  item.itemRessourceType = `${'ressource' + Math.ceil(Math.random() * 5)}`;
   data.value.push(item);
 };
 

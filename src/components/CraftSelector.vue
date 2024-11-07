@@ -43,7 +43,7 @@ const craftStore = useCraftStore();
 const globalStore = useGlobalStore();
 
 const getUsers = computed(() =>
-  globalStore.users.map(user => ({
+  globalStore.users.map((user: string) => ({
     value: user,
     label: user,
   }))

@@ -2,6 +2,7 @@
 .vscode/
 .yarn/
 dist/
+.json/
 coverage/
 public/assets/
 components.d.ts

@@ -5,6 +5,7 @@
       placeholder="Category"
       size="large"
       filterable
+      @change="itemStore.translateCategoryFromShopToSource()"
       style="width: 140px"
     >
       <template #header>
@@ -35,7 +36,7 @@
       />
     </el-select>
     <el-select
-      v-model="itemStore.tier"
+      v-model="itemStore.tierSelected"
       placeholder="Tier"
       size="large"
       style="width: 100px"
@@ -44,13 +45,13 @@
         <span>Tier</span>
       </template>
       <el-option
-        v-for="tier in tierList"
+        v-for="tier in tiers"
         :key="tier.value"
         :label="tier.label"
         :value="tier.value"
       />
     </el-select>
-    <!-- <el-select
+    <el-select
       v-model="itemStore.itemSelected"
       placeholder="Item"
       filterable
@@ -66,7 +67,7 @@
         :label="item.label"
         :value="item.value"
       />
-    </el-select> -->
+    </el-select>
     <el-button type="primary" plain @click="search" :icon="Search">
       Rechercher
     </el-button>
@@ -85,22 +86,11 @@ defineProps({
     default: false,
   },
   search: {
-    type: Promise,
+    type: Function,
   },
 });
 
 const itemStore = useItemStore();
-const tierList = ref([
-  { value: '0', label: 'all' },
-  { value: '1', label: '1' },
-  { value: '2', label: '2' },
-  { value: '3', label: '3' },
-  { value: '4', label: '4' },
-  { value: '5', label: '5' },
-  { value: '6', label: '6' },
-  { value: '7', label: '7' },
-  { value: '8', label: '8' },
-]);
 
 const categories = itemStore.getCategories.map((category: any) => ({
   value: category,
@@ -109,17 +99,33 @@ const categories = itemStore.getCategories.map((category: any) => ({
 
 const sub_category = computed(() => {
   return itemStore.getSubCategory?.map((subCategory: any) => ({
-    value: subCategory.id,
-    label: subCategory.id,
+    value: subCategory,
+    label: subCategory,
   }));
 });
 
-// const items = computed(() => {
-//   return itemStore.getItems.map((item: any) => ({
-//     value: item['@uniquename'],
-//     label: item['@uniquename'],
-//   }));
-// });
+const tiers = computed(() => {
+  return itemStore.getTiers.map((tier: number) => {
+    if (tier === 0) {
+      return {
+        value: tier,
+        label: 'All',
+      };
+    } else {
+      return {
+        value: tier,
+        label: tier,
+      };
+    }
+  });
+});
+
+const items = computed(() => {
+  return itemStore.getItems.map((item: any) => ({
+    value: item,
+    label: item,
+  }));
+});
 </script>
 
 <style scoped></style>

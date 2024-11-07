@@ -16,7 +16,7 @@
 <script setup>
 import { ShoppingCart } from '@element-plus/icons-vue';
 import { useCartStore } from '@/store/cart.store';
-import CartView from '@/views/CartView.vue';
+import CartView from '@/views/cart/index.vue';
 import { computed, ref } from 'vue';
 
 const cartStore = useCartStore();
