@@ -42,6 +42,6 @@ const router = createRouter({
   ],
 });
 
-router.replace('/craft');
+router.replace('/parameter');
 
 export default router;
