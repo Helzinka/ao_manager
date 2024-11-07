@@ -10,11 +10,8 @@ interface Istate {
   sub_category: string;
   tierSelected: string;
   tiers: number[];
-  citySelected: string;
-  citySell: string;
   itemSelected: string;
   rangeItemsSelected: string[];
-  data: any[];
 }
 
 const state: Istate = {
@@ -23,11 +20,8 @@ const state: Istate = {
   sub_category: '',
   tierSelected: '',
   tiers: [1, 2, 3, 4, 5, 6, 7, 8],
-  citySelected: 'Lymhurst',
-  citySell: 'Lymhurst',
   itemSelected: '',
   rangeItemsSelected: [],
-  data: [],
 };
 
 export const useItemStore = defineStore('item', {
@@ -52,16 +46,17 @@ export const useItemStore = defineStore('item', {
         .filter((item: any) => item['@shopsubcategory1'] === state.sub_category)
         .map((item: any) => item['@uniquename']);
     },
+    getAllItems() {
+      if (!state.itemSelected) return [];
+      let rangeItemsSelected: string[] = [];
+      let coreItem = state.itemSelected.replace(/^T\d_/, '');
+      for (let i = 4; i <= 8; i++) {
+        rangeItemsSelected.push(`T${i}_${coreItem}`);
+      }
+      return rangeItemsSelected;
+    },
   },
   actions: {
-    getAllTierItems() {
-      let itemsName = [];
-      for (let i = 0; i <= 4; i++) {
-        if (i == 0) itemsName.push(this.itemSelected);
-        else itemsName.push(`${this.itemSelected}@${i}`);
-      }
-      return itemsName;
-    },
     formatPriceByQuality(data: any) {
       return data.reduce((acc: any, curr: any) => {
         let { city, sell_price_min, quality, item_id } = curr;
@@ -98,14 +93,6 @@ export const useItemStore = defineStore('item', {
         }
         return acc;
       }, {});
-    },
-    getAllItems() {
-      if (this.itemSelected) {
-        let coreItem = this.itemSelected.replace(/^T\d_/, '');
-        for (let i = 4; i <= 8; i++) {
-          this.rangeItemsSelected.push(`T${i}_${coreItem}`);
-        }
-      }
     },
     translateCategoryFromShopToSource() {
       if (!this.category) return '';

@@ -10,7 +10,7 @@ declare module 'vue' {
     BaseHeader: typeof import('./src/components/layouts/BaseHeader.vue')['default']
     BaseSide: typeof import('./src/components/layouts/BaseSide.vue')['default']
     CartButton: typeof import('./src/components/CartButton.vue')['default']
-    CraftSelector: typeof import('./src/components/CraftSelector.vue')['default']
+    CraftConfig: typeof import('./src/components/CraftConfig.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElBadge: typeof import('element-plus/es')['ElBadge']
     ElButton: typeof import('element-plus/es')['ElButton']

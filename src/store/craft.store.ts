@@ -18,6 +18,7 @@ interface items {
 }
 
 interface state {
+  hide: boolean;
   rrr: number;
   fee: number;
   cityBonus: boolean;
@@ -25,6 +26,7 @@ interface state {
 }
 
 const state: state = {
+  hide: false,
   rrr: 24.8,
   fee: 6.5,
   cityBonus: true,

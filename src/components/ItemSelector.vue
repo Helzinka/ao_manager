@@ -71,12 +71,22 @@
     <el-button type="primary" plain @click="search" :icon="Search">
       Rechercher
     </el-button>
+    <slot name="config">
+      <el-button
+        type="primary"
+        plain
+        @click="itemStore.showConfig"
+        :icon="Setting"
+      >
+        Config
+      </el-button>
+    </slot>
   </div>
   <el-divider />
 </template>
 
 <script setup lang="ts">
-import { Search } from '@element-plus/icons-vue';
+import { Search, Setting } from '@element-plus/icons-vue';
 import { useItemStore } from '@/store/item.store';
 import { ref, computed } from 'vue';
 

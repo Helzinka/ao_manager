@@ -1,6 +1,6 @@
 <template>
-  <el-descriptions>
-    <el-descriptions-item label="Craft user" width="80">
+  <el-descriptions border :column="5" v-if="!craftStore.hide">
+    <el-descriptions-item label="Craft user">
       <el-select
         v-model="globalStore.userSelected"
         placeholder="User"

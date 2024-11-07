@@ -1,6 +1,12 @@
 <template>
-  <ItemSelector></ItemSelector>
-  <CraftSelector></CraftSelector>
+  <ItemSelector>
+    <template #config>
+      <el-button @click="craftStore.hide = !craftStore.hide">
+        config craft
+      </el-button>
+    </template>
+  </ItemSelector>
+  <CraftConfig></CraftConfig>
   <el-divider />
   <el-table
     :data="craftStore.craft"
