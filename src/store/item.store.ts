@@ -41,7 +41,7 @@ export const useItemStore = defineStore('item', {
       return state.tiers;
     },
     getItems(state) {
-      if (!state.sub_category && !state.tierSelected) return [];
+      if (!state.sub_category) return [];
       return source.items[state.categorySource]
         .filter((item: any) => item['@shopsubcategory1'] === state.sub_category)
         .map((item: any) => item['@uniquename']);
@@ -103,6 +103,7 @@ export const useItemStore = defineStore('item', {
         'cityresources',
         'artefacts',
         'essence',
+        'materials',
       ];
       const equipmentCategories = ['armor', 'accessories'];
 
@@ -115,6 +116,7 @@ export const useItemStore = defineStore('item', {
       } else if (this.category === 'skillbooks') {
         categorySource = 'consumablefrominventoryitem';
       } else if (resourceCategories.includes(this.category)) {
+        console.log('ok');
         categorySource = 'simpleitem';
       } else if (equipmentCategories.includes(this.category)) {
         categorySource = 'equipmentitem';

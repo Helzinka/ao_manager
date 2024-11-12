@@ -35,7 +35,8 @@
         :value="item.value"
       />
     </el-select>
-    <el-select
+    <!-- tierselected -->
+    <!-- <el-select
       v-model="itemStore.tierSelected"
       placeholder="Tier"
       size="large"
@@ -50,7 +51,7 @@
         :label="tier.label"
         :value="tier.value"
       />
-    </el-select>
+    </el-select> -->
     <el-select
       v-model="itemStore.itemSelected"
       placeholder="Item"

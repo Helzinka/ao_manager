@@ -1,12 +1,11 @@
-/**
- * Vue3 Main script
- */
 import store from '@/store';
 import { createApp } from 'vue';
 
 import App from '@/App.vue';
 import ElementPlus from '@/plugins/element-plus';
 import router from '@/router';
+
+import '@/data/gather';
 
 /** Register Vue */
 const vue = createApp(App);

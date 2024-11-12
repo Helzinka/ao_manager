@@ -2,7 +2,8 @@
 .vscode/
 .yarn/
 dist/
-.json/
+**/*.json
 coverage/
+**/node_modules
 public/assets/
 components.d.ts
