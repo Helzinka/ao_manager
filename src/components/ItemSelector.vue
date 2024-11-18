@@ -1,11 +1,10 @@
 <template>
   <div class="flex gap-4 items-end">
     <el-select
-      v-model="itemStore.category"
+      v-model="itemStore.category_selected"
       placeholder="Category"
       size="large"
       filterable
-      @change="itemStore.translateCategoryFromShopToSource()"
       style="width: 140px"
     >
       <template #header>
@@ -19,7 +18,7 @@
       />
     </el-select>
     <el-select
-      v-model="itemStore.sub_category"
+      v-model="itemStore.sub_category_selected"
       filterable
       placeholder="Sub category"
       size="large"
@@ -53,7 +52,7 @@
       />
     </el-select> -->
     <el-select
-      v-model="itemStore.itemSelected"
+      v-model="itemStore.item_selected"
       placeholder="Item"
       filterable
       size="large"
@@ -115,21 +114,21 @@ const sub_category = computed(() => {
   }));
 });
 
-const tiers = computed(() => {
-  return itemStore.getTiers.map((tier: number) => {
-    if (tier === 0) {
-      return {
-        value: tier,
-        label: 'All',
-      };
-    } else {
-      return {
-        value: tier,
-        label: tier,
-      };
-    }
-  });
-});
+// const tiers = computed(() => {
+//   return itemStore.getTiers.map((tier: number) => {
+//     if (tier === 0) {
+//       return {
+//         value: tier,
+//         label: 'All',
+//       };
+//     } else {
+//       return {
+//         value: tier,
+//         label: tier,
+//       };
+//     }
+//   });
+// });
 
 const items = computed(() => {
   return itemStore.getItems.map((item: any) => ({

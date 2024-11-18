@@ -1,4 +1,4 @@
-import { rateQuantity } from '@/helpers/compute';
+import { rateQuantity } from '@/plugin/compute';
 import { defineStore } from 'pinia';
 
 interface items {

@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import { usePriceStore } from '@/store/price.store';
-import { getImageUrl } from '@/plugins/format';
+import { getImageUrl } from '@/plugin/format';
 import { useItemStore } from '@/store/item.store';
 
 const price = usePriceStore();

@@ -20,5 +20,5 @@
 </template>
 
 <script lang="ts" setup>
-import { toggleDark } from '@/helpers/dark';
+import { toggleDark } from '@/plugin/dark';
 </script>

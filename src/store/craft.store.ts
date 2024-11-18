@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { craft } from '@/data/mock.json';
 import { useItemStore } from './item.store';
-import { cost, gain, profit } from '@/helpers/compute';
+import { cost, gain, profit } from '@/plugin/compute';
 
 interface items {
   itemName: string;

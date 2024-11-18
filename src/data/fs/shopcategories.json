@@ -1,0 +1,854 @@
+{
+  "shopcategories": [
+    {
+      "id": "melee",
+      "@value": "10",
+      "shopsubcategory": [
+        {
+          "id": "axe",
+          "@value": "0"
+        },
+        {
+          "id": "dagger",
+          "@value": "1"
+        },
+        {
+          "id": "hammer",
+          "@value": "2"
+        },
+        {
+          "id": "mace",
+          "@value": "3"
+        },
+        {
+          "id": "quarterstaff",
+          "@value": "4"
+        },
+        {
+          "id": "spear",
+          "@value": "5"
+        },
+        {
+          "id": "sword",
+          "@value": "6"
+        },
+        {
+          "id": "knuckles",
+          "@value": "7"
+        }
+      ]
+    },
+    {
+      "id": "magic",
+      "@value": "12",
+      "shopsubcategory": [
+        {
+          "id": "arcanestaff",
+          "@value": "0"
+        },
+        {
+          "id": "cursestaff",
+          "@value": "1"
+        },
+        {
+          "id": "firestaff",
+          "@value": "2"
+        },
+        {
+          "id": "froststaff",
+          "@value": "3"
+        },
+        {
+          "id": "holystaff",
+          "@value": "4"
+        },
+        {
+          "id": "naturestaff",
+          "@value": "5"
+        },
+        {
+          "id": "shapeshifterstaff",
+          "@value": "6"
+        }
+      ]
+    },
+    {
+      "id": "ranged",
+      "@value": "11",
+      "shopsubcategory": [
+        {
+          "id": "bow",
+          "@value": "0"
+        },
+        {
+          "id": "crossbow",
+          "@value": "1"
+        }
+      ]
+    },
+    {
+      "id": "offhand",
+      "@value": "20",
+      "shopsubcategory": [
+        {
+          "id": "book",
+          "@value": "0"
+        },
+        {
+          "id": "orb",
+          "@value": "1"
+        },
+        {
+          "id": "totem",
+          "@value": "2"
+        },
+        {
+          "id": "horn",
+          "@value": "3"
+        },
+        {
+          "id": "torch",
+          "@value": "4"
+        },
+        {
+          "id": "shield",
+          "@value": "5"
+        }
+      ]
+    },
+    {
+      "id": "armor",
+      "@value": "30",
+      "shopsubcategory": [
+        {
+          "id": "cloth_helmet",
+          "@value": "0"
+        },
+        {
+          "id": "leather_helmet",
+          "@value": "1"
+        },
+        {
+          "id": "plate_helmet",
+          "@value": "2"
+        },
+        {
+          "id": "unique_helmet",
+          "@value": "3"
+        },
+        {
+          "id": "cloth_armor",
+          "@value": "4"
+        },
+        {
+          "id": "leather_armor",
+          "@value": "5"
+        },
+        {
+          "id": "plate_armor",
+          "@value": "6"
+        },
+        {
+          "id": "unique_armor",
+          "@value": "7"
+        },
+        {
+          "id": "cloth_shoes",
+          "@value": "8"
+        },
+        {
+          "id": "leather_shoes",
+          "@value": "9"
+        },
+        {
+          "id": "plate_shoes",
+          "@value": "10"
+        },
+        {
+          "id": "unique_shoes",
+          "@value": "11"
+        }
+      ]
+    },
+    {
+      "id": "accessories",
+      "@value": "40",
+      "shopsubcategory": [
+        {
+          "id": "cape",
+          "@value": "0"
+        },
+        {
+          "id": "bag",
+          "@value": "1"
+        }
+      ]
+    },
+    {
+      "id": "mounts",
+      "@value": "50",
+      "shopsubcategory": [
+        {
+          "id": "ridinghorse",
+          "@value": "0"
+        },
+        {
+          "id": "armoredhorse",
+          "@value": "1"
+        },
+        {
+          "id": "ox",
+          "@value": "2"
+        },
+        {
+          "id": "mule",
+          "@value": "3"
+        },
+        {
+          "id": "cougar",
+          "@value": "4"
+        },
+        {
+          "id": "direwolf",
+          "@value": "5"
+        },
+        {
+          "id": "direbear",
+          "@value": "6"
+        },
+        {
+          "id": "direboar",
+          "@value": "7"
+        },
+        {
+          "id": "swampdragon",
+          "@value": "8"
+        },
+        {
+          "id": "giantstag",
+          "@value": "9"
+        },
+        {
+          "id": "rare_mount",
+          "@value": "10"
+        },
+        {
+          "id": "battle_mount",
+          "@value": "11"
+        }
+      ]
+    },
+    {
+      "id": "gatherergear",
+      "@value": "60",
+      "shopsubcategory": [
+        {
+          "id": "fibergatherer_helmet",
+          "@value": "0"
+        },
+        {
+          "id": "fishgatherer_helmet",
+          "@value": "1"
+        },
+        {
+          "id": "hidegatherer_helmet",
+          "@value": "2"
+        },
+        {
+          "id": "oregatherer_helmet",
+          "@value": "3"
+        },
+        {
+          "id": "rockgatherer_helmet",
+          "@value": "4"
+        },
+        {
+          "id": "woodgatherer_helmet",
+          "@value": "5"
+        },
+        {
+          "id": "fibergatherer_armor",
+          "@value": "10"
+        },
+        {
+          "id": "fishgatherer_armor",
+          "@value": "11"
+        },
+        {
+          "id": "hidegatherer_armor",
+          "@value": "12"
+        },
+        {
+          "id": "oregatherer_armor",
+          "@value": "13"
+        },
+        {
+          "id": "rockgatherer_armor",
+          "@value": "14"
+        },
+        {
+          "id": "woodgatherer_armor",
+          "@value": "15"
+        },
+        {
+          "id": "fibergatherer_shoes",
+          "@value": "20"
+        },
+        {
+          "id": "fishgatherer_shoes",
+          "@value": "21"
+        },
+        {
+          "id": "hidegatherer_shoes",
+          "@value": "22"
+        },
+        {
+          "id": "oregatherer_shoes",
+          "@value": "23"
+        },
+        {
+          "id": "rockgatherer_shoes",
+          "@value": "24"
+        },
+        {
+          "id": "woodgatherer_shoes",
+          "@value": "25"
+        },
+        {
+          "id": "fibergatherer_backpack",
+          "@value": "30"
+        },
+        {
+          "id": "fishgatherer_backpack",
+          "@value": "31"
+        },
+        {
+          "id": "hidegatherer_backpack",
+          "@value": "32"
+        },
+        {
+          "id": "oregatherer_backpack",
+          "@value": "33"
+        },
+        {
+          "id": "rockgatherer_backpack",
+          "@value": "34"
+        },
+        {
+          "id": "woodgatherer_backpack",
+          "@value": "35"
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "@value": "61",
+      "shopsubcategory": [
+        {
+          "id": "demolitionhammer",
+          "@value": "0"
+        },
+        {
+          "id": "fishing",
+          "@value": "1"
+        },
+        {
+          "id": "pickaxe",
+          "@value": "2"
+        },
+        {
+          "id": "sickle",
+          "@value": "3"
+        },
+        {
+          "id": "skinningknife",
+          "@value": "4"
+        },
+        {
+          "id": "stonehammer",
+          "@value": "5"
+        },
+        {
+          "id": "woodaxe",
+          "@value": "6"
+        },
+        {
+          "id": "trackingtool",
+          "@value": "7"
+        },
+        {
+          "id": "siegebanner",
+          "@value": "8"
+        }
+      ]
+    },
+    {
+      "id": "consumables",
+      "@value": "70",
+      "shopsubcategory": [
+        {
+          "id": "cooked",
+          "@value": "0"
+        },
+        {
+          "id": "potion",
+          "@value": "1"
+        },
+        {
+          "id": "fishingbait",
+          "@value": "2"
+        },
+        {
+          "id": "fish",
+          "@value": "3"
+        },
+        {
+          "id": "vanity",
+          "@value": "11"
+        },
+        {
+          "id": "maps",
+          "@value": "12"
+        },
+        {
+          "id": "kill_emotes",
+          "@value": "13"
+        },
+        {
+          "id": "other",
+          "@value": "100"
+        }
+      ]
+    },
+    {
+      "id": "skillbooks",
+      "@value": "71",
+      "shopsubcategory": [
+        {
+          "id": "skillbook",
+          "@value": "1"
+        },
+        {
+          "id": "skillbook_fiber",
+          "@value": "2"
+        },
+        {
+          "id": "skillbook_hide",
+          "@value": "3"
+        },
+        {
+          "id": "skillbook_ore",
+          "@value": "4"
+        },
+        {
+          "id": "skillbook_rock",
+          "@value": "5"
+        },
+        {
+          "id": "skillbook_wood",
+          "@value": "6"
+        }
+      ]
+    },
+    {
+      "id": "resources",
+      "@value": "72",
+      "shopsubcategory": [
+        {
+          "id": "fiber",
+          "@value": "0"
+        },
+        {
+          "id": "hide",
+          "@value": "1"
+        },
+        {
+          "id": "ore",
+          "@value": "2"
+        },
+        {
+          "id": "rock",
+          "@value": "3"
+        },
+        {
+          "id": "wood",
+          "@value": "4"
+        },
+        {
+          "id": "cloth",
+          "@value": "10"
+        },
+        {
+          "id": "leather",
+          "@value": "11"
+        },
+        {
+          "id": "metalbar",
+          "@value": "12"
+        },
+        {
+          "id": "stoneblock",
+          "@value": "13"
+        },
+        {
+          "id": "planks",
+          "@value": "14"
+        },
+        {
+          "id": "other",
+          "@value": "100"
+        }
+      ]
+    },
+    {
+      "id": "cityresources",
+      "@value": "73",
+      "shopsubcategory": [
+        {
+          "id": "beastheart",
+          "@value": "0"
+        },
+        {
+          "id": "mountainheart",
+          "@value": "1"
+        },
+        {
+          "id": "rockheart",
+          "@value": "2"
+        },
+        {
+          "id": "treeheart",
+          "@value": "3"
+        },
+        {
+          "id": "vineheart",
+          "@value": "4"
+        },
+        {
+          "id": "blackheart",
+          "@value": "4"
+        }
+      ]
+    },
+    {
+      "id": "artefacts",
+      "@value": "74",
+      "shopsubcategory": [
+        {
+          "id": "magic_artefact",
+          "@value": "0"
+        },
+        {
+          "id": "ranged_artefact",
+          "@value": "1"
+        },
+        {
+          "id": "melee_artefact",
+          "@value": "2"
+        },
+        {
+          "id": "armor_artefact",
+          "@value": "3"
+        },
+        {
+          "id": "offhand_artefact",
+          "@value": "4"
+        },
+        {
+          "id": "other",
+          "@value": "100"
+        }
+      ]
+    },
+    {
+      "id": "materials",
+      "@value": "75",
+      "shopsubcategory": [
+        {
+          "id": "essence",
+          "@value": "0"
+        },
+        {
+          "id": "rune",
+          "@value": "1"
+        },
+        {
+          "id": "soul",
+          "@value": "2"
+        },
+        {
+          "id": "relic",
+          "@value": "3"
+        },
+        {
+          "id": "shard_avalon",
+          "@value": "4"
+        },
+        {
+          "id": "shard_crystal",
+          "@value": "5"
+        },
+        {
+          "id": "other",
+          "@value": "100"
+        }
+      ]
+    },
+    {
+      "id": "token",
+      "@value": "76",
+      "shopsubcategory": [
+        {
+          "id": "arenasigils",
+          "@value": "0"
+        },
+        {
+          "id": "event",
+          "@value": "1"
+        },
+        {
+          "id": "royalsigils",
+          "@value": "2"
+        },
+        {
+          "id": "maps",
+          "@value": "3"
+        },
+        {
+          "id": "crystalleague",
+          "@value": "4"
+        },
+        {
+          "id": "other",
+          "@value": "100"
+        }
+      ]
+    },
+    {
+      "id": "farmables",
+      "@value": "80",
+      "shopsubcategory": [
+        {
+          "id": "animals",
+          "@value": "0"
+        },
+        {
+          "id": "seed",
+          "@value": "1"
+        }
+      ]
+    },
+    {
+      "id": "products",
+      "@value": "81",
+      "shopsubcategory": [
+        {
+          "id": "journal",
+          "@value": "0"
+        },
+        {
+          "id": "farming",
+          "@value": "1"
+        },
+        {
+          "id": "animals",
+          "@value": "2"
+        },
+        {
+          "id": "cooked",
+          "@value": "3"
+        }
+      ]
+    },
+    {
+      "id": "luxurygoods",
+      "@value": "82",
+      "shopsubcategory": [
+        {
+          "id": "bridgewatch",
+          "@value": "0"
+        },
+        {
+          "id": "caerleon",
+          "@value": "1"
+        },
+        {
+          "id": "fortsterling",
+          "@value": "2"
+        },
+        {
+          "id": "lymhurst",
+          "@value": "3"
+        },
+        {
+          "id": "martlock",
+          "@value": "4"
+        },
+        {
+          "id": "thetford",
+          "@value": "5"
+        },
+        {
+          "id": "any",
+          "@value": "6"
+        }
+      ]
+    },
+    {
+      "id": "trophies",
+      "@value": "83",
+      "shopsubcategory": [
+        {
+          "id": "fibertrophy",
+          "@value": "0"
+        },
+        {
+          "id": "fishtrophy",
+          "@value": "1"
+        },
+        {
+          "id": "generaltrophy",
+          "@value": "2"
+        },
+        {
+          "id": "hidetrophy",
+          "@value": "3"
+        },
+        {
+          "id": "mercenarytrophy",
+          "@value": "4"
+        },
+        {
+          "id": "oretrophy",
+          "@value": "5"
+        },
+        {
+          "id": "rocktrophy",
+          "@value": "6"
+        },
+        {
+          "id": "woodtrophy",
+          "@value": "7"
+        }
+      ]
+    },
+    {
+      "id": "furniture",
+      "@value": "100",
+      "shopsubcategory": [
+        {
+          "id": "banner",
+          "@value": "0"
+        },
+        {
+          "id": "bed",
+          "@value": "1"
+        },
+        {
+          "id": "decoration_furniture",
+          "@value": "2"
+        },
+        {
+          "id": "flag",
+          "@value": "3"
+        },
+        {
+          "id": "heretic_furniture",
+          "@value": "4"
+        },
+        {
+          "id": "keeper_furniture",
+          "@value": "5"
+        },
+        {
+          "id": "morgana_furniture",
+          "@value": "6"
+        },
+        {
+          "id": "repairkit",
+          "@value": "7"
+        },
+        {
+          "id": "table",
+          "@value": "8"
+        },
+        {
+          "id": "chest",
+          "@value": "9"
+        },
+        {
+          "id": "unique",
+          "@value": "10"
+        }
+      ]
+    },
+    {
+      "id": "labourers",
+      "@value": "100",
+      "shopsubcategory": [
+        {
+          "id": "woodcontract",
+          "@value": "0"
+        },
+        {
+          "id": "stonecontract",
+          "@value": "1"
+        },
+        {
+          "id": "fibercontract",
+          "@value": "2"
+        },
+        {
+          "id": "hidecontract",
+          "@value": "3"
+        },
+        {
+          "id": "orecontract",
+          "@value": "4"
+        },
+        {
+          "id": "mercenarycontract",
+          "@value": "5"
+        },
+        {
+          "id": "warriorcontract",
+          "@value": "6"
+        },
+        {
+          "id": "magecontract",
+          "@value": "7"
+        },
+        {
+          "id": "huntercontract",
+          "@value": "8"
+        },
+        {
+          "id": "toolmakercontract",
+          "@value": "9"
+        },
+        {
+          "id": "fishingcontract",
+          "@value": "10"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "@value": "111",
+      "shopsubcategory": [
+        {
+          "id": "mission",
+          "@value": "0"
+        },
+        {
+          "id": "other",
+          "@value": "100"
+        },
+        {
+          "id": "trash",
+          "@value": "101"
+        }
+      ]
+    }
+  ]
+}

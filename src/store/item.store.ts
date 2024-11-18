@@ -1,26 +1,26 @@
 import { defineStore } from 'pinia';
 import fake_data from '@/data/mock.json';
 import { shopcategories } from '@/data/shopcategories.json';
-import source from '@/data/items.json';
-import { spreadNumber } from '@/helpers/compute';
+import { shop } from '@/data/fs/shop.json';
+import { spreadNumber } from '@/plugin/compute';
 
 interface Istate {
-  category: string;
+  category_selected: string;
   categorySource: string;
-  sub_category: string;
+  sub_category_selected: string;
   tierSelected: string;
   tiers: number[];
-  itemSelected: string;
+  item_selected: string;
   rangeItemsSelected: string[];
 }
 
 const state: Istate = {
-  category: '',
+  category_selected: '',
   categorySource: '',
-  sub_category: '',
+  sub_category_selected: '',
   tierSelected: '',
   tiers: [1, 2, 3, 4, 5, 6, 7, 8],
-  itemSelected: '',
+  item_selected: '',
   rangeItemsSelected: [],
 };
 
@@ -28,30 +28,21 @@ export const useItemStore = defineStore('item', {
   state: () => state,
   getters: {
     getCategories(state) {
-      return shopcategories.map((category: any) => category.id).sort();
+      return Object.keys(shop).sort();
     },
     getSubCategory(state) {
-      if (!state.category) return [];
-      return shopcategories
-        .find((category: any) => state.category === category.id)
-        ?.shopsubcategory.map((sub: any) => sub.id)
-        .sort();
-    },
-    getTiers(state) {
-      return state.tiers;
+      if (!state.category_selected) return [];
+      return Object.keys(shop[state.category_selected]).sort();
     },
     getItems(state) {
-      if (!state.sub_category) return [];
-      return source.items[state.categorySource]
-        .filter((item: any) => item['@shopsubcategory1'] === state.sub_category)
-        .map((item: any) => item['@uniquename']);
+      if (!state.sub_category_selected) return [];
+      return shop[state.category_selected][state.sub_category_selected];
     },
-    getAllItems() {
-      if (!state.itemSelected) return [];
+    getAllTierItems() {
+      if (!state.item_selected) return [];
       let rangeItemsSelected: string[] = [];
-      let coreItem = state.itemSelected.replace(/^T\d_/, '');
       for (let i = 4; i <= 8; i++) {
-        rangeItemsSelected.push(`T${i}_${coreItem}`);
+        rangeItemsSelected.push(`T${i}_${state.item_selected}`);
       }
       return rangeItemsSelected;
     },
@@ -93,35 +84,6 @@ export const useItemStore = defineStore('item', {
         }
         return acc;
       }, {});
-    },
-    translateCategoryFromShopToSource() {
-      if (!this.category) return '';
-      let categorySource = '';
-      const weaponCategories = ['melee', 'magic', 'ranged', 'offhand', 'tools'];
-      const resourceCategories = [
-        'ressources',
-        'cityresources',
-        'artefacts',
-        'essence',
-        'materials',
-      ];
-      const equipmentCategories = ['armor', 'accessories'];
-
-      if (weaponCategories.includes(this.category)) {
-        categorySource = 'weapon';
-      } else if (this.category === 'consumables') {
-        categorySource = 'consumableitem';
-      } else if (this.category === 'mounts') {
-        categorySource = 'mount';
-      } else if (this.category === 'skillbooks') {
-        categorySource = 'consumablefrominventoryitem';
-      } else if (resourceCategories.includes(this.category)) {
-        console.log('ok');
-        categorySource = 'simpleitem';
-      } else if (equipmentCategories.includes(this.category)) {
-        categorySource = 'equipmentitem';
-      }
-      this.categorySource = categorySource;
     },
   },
 });

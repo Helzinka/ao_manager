@@ -65,7 +65,7 @@
 </template>
 
 <script setup lang="ts">
-import { spreadNumber } from '@/helpers/compute';
+import { spreadNumber } from '@/plugin/compute';
 import { useCartStore } from '@/store/cart.store';
 import { useCraftStore } from '@/store/craft.store';
 import { onMounted, toRaw } from 'vue';
