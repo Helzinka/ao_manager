@@ -118,7 +118,7 @@ export function rerollCost(
   return Math.ceil(compute);
 }
 
-export function calculateProbabilities(qualityLevels: number) {
+export function getQualityChance(qualityLevels: number) {
   const rate = qualityLevels / 100;
   const mp = 1 - Math.pow(0.999, rate);
   const ex = 1 - Math.pow(0.989, rate) - mp;
@@ -133,6 +133,33 @@ export function calculateProbabilities(qualityLevels: number) {
     go: parseFloat((go * 100).toFixed(2)),
     no: parseFloat((no * 100).toFixed(2)),
   };
+}
+
+export function rerollCostByQuality(
+  itemValue: number,
+  qualityLevels: number,
+  globalDiscount: number = 0
+): number {
+  const qualityChance = getQualityChance(qualityLevels);
+
+  const qualities = ['normal', 'good', 'outstanding'] as (
+    | 'normal'
+    | 'good'
+    | 'outstanding'
+    | 'excellent'
+  )[];
+  const chances = ['no', 'go', 'ou'] as (keyof typeof qualityChance)[];
+  let compute = 0;
+
+  for (let i = 0; i < qualities.length; i++) {
+    let cost = 0;
+    for (let j = i; j < qualities.length; j++) {
+      cost += rerollCost(itemValue, qualities[j], globalDiscount);
+    }
+    compute += cost * (qualityChance[chances[i]] / 100);
+  }
+
+  return Math.ceil(compute);
 }
 
 const qualityLevels = [
